@@ -63,7 +63,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue"
 import { useNuxtApp } from "#app"
-import gsap from "gsap"
+// import gsap from "gsap"
 import AnimatedSplit from "@/components/AnimatedSplit.vue"
 import heroImg from "@/assets/images/home-hero-2.jpg"
 
@@ -76,7 +76,7 @@ const textWrapRef = ref(null)
 const title1 = ref(null)
 const title2 = ref(null)
 
-const { $lenis } = useNuxtApp()
+const { $lenis, $gsap } = useNuxtApp()
 const BASE_OPACITY = 0.35
 const MAX_OPACITY = 0.75
 
@@ -85,9 +85,9 @@ let rafId = null
 
 onMounted(() => {
 
-  gsap.set(imageWrapRef.value, { y: 0 })
-  gsap.set(textWrapRef.value, { y: 0 })
-  gsap.set(overlayRef.value, { opacity: BASE_OPACITY })
+  $gsap.set(imageWrapRef.value, { y: 0 })
+  $gsap.set(textWrapRef.value, { y: 0 })
+  $gsap.set(overlayRef.value, { opacity: BASE_OPACITY })
 
 
 
@@ -99,24 +99,24 @@ onMounted(() => {
     const heroHeight = heroRef.value.offsetHeight
 
     // 0 → 1 progress through hero
-    const progress = gsap.utils.clamp(
+    const progress = $gsap.utils.clamp(
       0,
       1,
       (scrollY - heroTop) / heroHeight
     )
 
     // IMAGE PARALLAX (slower than scroll)
-    gsap.set(imageWrapRef.value, {
+    $gsap.set(imageWrapRef.value, {
       y: progress * 550
     })
 
-    gsap.set(textWrapRef.value, {
+    $gsap.set(textWrapRef.value, {
       y: progress * window.innerHeight
     })
 
 
     // OVERLAY DARKENING
-    gsap.set(overlayRef.value, {
+    $gsap.set(overlayRef.value, {
         opacity: BASE_OPACITY + progress * (MAX_OPACITY - BASE_OPACITY)
       })
 

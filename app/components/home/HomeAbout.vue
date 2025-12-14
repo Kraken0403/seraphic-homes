@@ -61,7 +61,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import { useNuxtApp } from "#app"
-import gsap from "gsap"
+// import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 
 import AnimatedSplit from "@/components/AnimatedSplit.vue"

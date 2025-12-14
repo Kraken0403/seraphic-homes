@@ -12,16 +12,12 @@
 import { ref, onMounted, nextTick, inject } from "vue"
 import { useSeoMeta, useNuxtApp } from "#imports"
 import { useIntroTimeline } from "@/composables/useIntroTimeline"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
 
 import HomeHero from "@/components/home/HomeHero.vue"
 import HomeAbout from "@/components/home/HomeAbout.vue"
 import HomeProductSection from "@/components/home/HomeProductSection.vue"
 import WhySeraphic from "@/components/home/WhySeraphic.vue"
 import UpcomingProjects from "@/components/home/UpcomingProjects.vue"
-
-gsap.registerPlugin(ScrollTrigger)
 
 useSeoMeta({
   title: "Seraphic Homes | Luxury Living Redefined",
@@ -33,9 +29,14 @@ const heroRef = ref(null)
 const headerInstance = inject("headerInstance")
 
 const { playIntro, resetIntro } = useIntroTimeline()
-const { $lenis } = useNuxtApp()
+
+// ✅ get GSAP + ScrollTrigger from plugin
+const { $gsap, $scrollTrigger, $lenis } = useNuxtApp()
 
 onMounted(async () => {
+  // 🔒 hard client guard (Nuxt 4 is strict)
+  if (!process.client) return
+
   await nextTick()
 
   if (!heroRef.value || !headerInstance?.value) return
@@ -59,7 +60,7 @@ onMounted(async () => {
   setTimeout(() => {
     $lenis?.start()
     $lenis?.resize?.()
-    ScrollTrigger.refresh(true)
+    $scrollTrigger?.refresh(true)
   }, 1600)
 })
 </script>

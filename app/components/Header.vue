@@ -125,7 +125,7 @@
 <script setup>
 import { ref, onMounted, computed } from "vue"
 import { useRoute, useNuxtApp } from "#app"
-import gsap from "gsap"
+// import gsap from "gsap"
 
 import AnimatedSplit from "@/components/AnimatedSplit.vue"
 import Button from "@/components/Button.vue"
@@ -135,7 +135,7 @@ import lightLogo from "@/assets/images/logo-h-white.png"
 import darkLogo from "@/assets/images/logo-h-black.png"
 
 const route = useRoute()
-const { $lenis } = useNuxtApp()
+const { $lenis, $gsap } = useNuxtApp()
 
 /* -------------------------
    HEADER THEME (ONLY ADDITION)
@@ -175,16 +175,16 @@ let textPlayed = false
 let tl
 
 onMounted(() => {
-  gsap.set(menuRef.value, {
+  $gsap.set(menuRef.value, {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"
   })
 
-  gsap.set(overlayRef.value, {
+  $gsap.set(overlayRef.value, {
     opacity: 0,
     pointerEvents: "none"
   })
 
-  tl = gsap.timeline({ paused: true, defaults: { ease: "power4.out" } })
+  tl = $gsap.timeline({ paused: true, defaults: { ease: "power4.out" } })
 
   tl.to(menuRef.value, {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",

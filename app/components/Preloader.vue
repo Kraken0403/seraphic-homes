@@ -22,11 +22,13 @@
 
 <script setup>
 import { ref, onMounted } from "vue"
-import gsap from "gsap"
+import { useNuxtApp } from "#imports"
+// import gsap from "gsap"
 import imagesLoaded from "imagesloaded"
 import { usePreloader } from "@/composables/usePreloader"
 import { useIntroTimeline } from "@/composables/useIntroTimeline"
 
+const { $gsap } = useNuxtApp()
 const preloader = ref(null)
 const bar = ref(null)
 
@@ -37,11 +39,11 @@ onMounted(async () => {
   // ----------------------------
   // INITIAL STATE
   // ----------------------------
-  gsap.set(preloader.value, {
+  $gsap.set(preloader.value, {
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
   })
 
-  gsap.set(bar.value, { scaleX: 0 })
+  $gsap.set(bar.value, { scaleX: 0 })
 
   // ----------------------------
   // WAIT FOR FONTS
@@ -55,14 +57,14 @@ onMounted(async () => {
   // ----------------------------
   imagesLoaded(document.body, { background: true }, () => {
     // BAR → 100% (ONLY ONCE)
-    gsap.to(bar.value, {
+    $gsap.to(bar.value, {
       scaleX: 1,
       duration: 1,
       ease: "power2.out"
     })
 
     // EXIT PRELOADER
-    gsap.to(preloader.value, {
+    $gsap.to(preloader.value, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
       duration: 0.9,
       ease: "power4.inOut",
