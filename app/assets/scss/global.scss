@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Main hero title */
+    --title-main: clamp(2.5rem, 1.6rem + 5.4vw, 9.5rem);
+  
+    /* Section title */
+    --title-sub: clamp(2rem, 3vw + 1rem, 6rem);
+  
+    /* Regular paragraph text */
+    --text-body: clamp(0.8rem, 1rem, 1.2rem);
+  }
+
+
+@font-face {
+    font-family: "Made";
+    src: url("~/assets/fonts/MADEMirage-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Newyork";
+    src: url("~/assets/fonts/NewYork.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   HTML & BODY DEFAULTS
+-------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+
+}
+
+/* --------------------------------------------------
+   GLOBAL UTILS
+-------------------------------------------------- */
+/* Hide Scrollbars */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth fade class for animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   LINKS
+-------------------------------------------------- */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --------------------------------------------------
+   IMAGES
+-------------------------------------------------- */
+
+img, picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------
+   HEADERS
+-------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+//   font-weight: 600;
+  line-height: 1.2;
+  
+}
+
+h1 {
+    font-family: 'Made';
+}
+
+h2 {
+    font-family: 'NewYork';
+}
+
+p,a {
+    font-family: "Instrument Sans", sans-serif;
+}
+
+/* --------------------------------------------------
+   BUTTON RESET
+-------------------------------------------------- */
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
