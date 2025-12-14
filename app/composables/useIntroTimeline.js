@@ -5,17 +5,44 @@ export function useIntroTimeline() {
     hasPlayed = false
   }
 
-  function playIntro(payload) {
-    // 🔒 SSR + SAFETY GUARDS
+  async function waitForRefs(hero, header, maxTries = 20) {
+    let tries = 0
+
+    return new Promise((resolve) => {
+      const check = () => {
+        if (
+          hero?.heroImgRef &&
+          header?.headerRef &&
+          hero?.title1 &&
+          hero?.title2
+        ) {
+          resolve(true)
+        } else if (tries < maxTries) {
+          tries++
+          requestAnimationFrame(check)
+        } else {
+          resolve(false)
+        }
+      }
+
+      check()
+    })
+  }
+
+  async function playIntro(payload) {
+    // 🔒 SSR + SAFETY
     if (!process.client) return
     if (!payload || !payload.hero || !payload.header) return
     if (hasPlayed) return
 
-    hasPlayed = true
-
     const { hero, header } = payload
 
-    // ✅ get GSAP from Nuxt plugin
+    // ✅ wait until refs actually exist (KEY FIX)
+    const ready = await waitForRefs(hero, header)
+    if (!ready) return
+
+    hasPlayed = true
+
     const { $gsap } = useNuxtApp()
     if (!$gsap) return
 
