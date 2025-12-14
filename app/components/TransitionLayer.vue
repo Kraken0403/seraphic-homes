@@ -18,9 +18,11 @@
   
   const layer = ref(null)
   const bg = ref(null)
+
+  const { $gsap } = useNuxtApp();
   
-  const nuxtApp = useNuxtApp()
-  const gsap = nuxtApp.$gsap
+  // const nuxtApp = useNuxtApp()
+  // const gsap = nuxtApp.$gsap
   
   let _resolveReady
   const ready = new Promise((resolve) => {
@@ -29,7 +31,7 @@
   
   onMounted(() => {
     // DOM is NOW guaranteed
-    gsap.set(bg.value, {
+    $gsap.set(bg.value, {
       scaleY: 0,
       transformOrigin: "top"
     })
@@ -39,12 +41,12 @@
   async function playOut(done) {
     await ready
   
-    gsap.set(bg.value, {
+    $gsap.set(bg.value, {
       scaleY: 0,
       transformOrigin: "bottom"
     })
   
-    gsap.to(bg.value, {
+    $gsap.to(bg.value, {
       scaleY: 1,
       duration: 0.65,
       ease: "power3.inOut",
@@ -55,7 +57,7 @@
   async function playIn(done) {
     await ready
   
-    gsap.to(bg.value, {
+    $gsap.to(bg.value, {
       scaleY: 0,
       transformOrigin: "top",
       duration: 0.65,

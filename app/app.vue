@@ -7,11 +7,8 @@
 
 <script setup>
 import { useRoute, useNuxtApp } from "#app"
-import { nextTick } from "vue"
-import Preloader from "@/components/Preloader.vue"
 
-const route = useRoute()
-const nuxtApp = useNuxtApp()
+import Preloader from "@/components/Preloader.vue"
 
 
 </script>

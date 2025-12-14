@@ -1,5 +1,3 @@
-import gsap from "gsap"
-
 let hasPlayed = false
 
 export function useIntroTimeline() {
@@ -8,7 +6,8 @@ export function useIntroTimeline() {
   }
 
   function playIntro(payload) {
-    // SAFETY GUARDS
+    // 🔒 SSR + SAFETY GUARDS
+    if (!process.client) return
     if (!payload || !payload.hero || !payload.header) return
     if (hasPlayed) return
 
@@ -16,19 +15,23 @@ export function useIntroTimeline() {
 
     const { hero, header } = payload
 
-    const tl = gsap.timeline({
+    // ✅ get GSAP from Nuxt plugin
+    const { $gsap } = useNuxtApp()
+    if (!$gsap) return
+
+    const tl = $gsap.timeline({
       defaults: { ease: "power3.out" }
     })
 
     /* ----------------------------
        INITIAL STATES
     ---------------------------- */
-    gsap.set(hero.heroImgRef, {
+    $gsap.set(hero.heroImgRef, {
       scale: 1.15,
       filter: "blur(12px)"
     })
 
-    gsap.set(header.headerRef, {
+    $gsap.set(header.headerRef, {
       y: -30,
       opacity: 0
     })

@@ -61,8 +61,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import { useNuxtApp } from "#app"
-// import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
+
 
 import AnimatedSplit from "@/components/AnimatedSplit.vue"
 import Button from "@/components/Button.vue"
@@ -70,7 +69,7 @@ import Button from "@/components/Button.vue"
 import leftImage from "@/assets/images/left.png"
 import rightImage from "@/assets/images/right.jpg"
 
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
 const sectionEl = ref(null)
 
