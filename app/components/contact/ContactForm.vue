@@ -99,7 +99,7 @@
 <script setup>
 import { ref, onMounted } from "vue"
 import AnimatedSplit from "@/components/AnimatedSplit.vue"
-
+import { useNuxtApp } from "#app"
 const sectionRef = ref(null)
 const title1 = ref(null)
 

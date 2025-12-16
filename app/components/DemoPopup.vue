@@ -186,16 +186,13 @@
   status.value = "idle"
 
   try {
-    const { data, error } = await useFetch("/api/demo-request", {
+    const res = await $fetch("/api/demo-request", {
       method: "POST",
       body: form.value
     })
 
-    if (error.value) throw error.value
-
-    if (data.value?.success) {
+    if (res?.success) {
       status.value = "success"
-
       form.value = {
         name: "",
         email: "",
@@ -211,6 +208,7 @@
     loading.value = false
   }
 }
+
 
   </script>
   
