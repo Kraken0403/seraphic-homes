@@ -135,7 +135,7 @@
   /* -----------------------
      NUXT / LENIS / FETCH
   ----------------------- */
-  const { $lenis, $fetch } = useNuxtApp()
+  const { $lenis } = useNuxtApp()
   
   /* -----------------------
      FORM STATE

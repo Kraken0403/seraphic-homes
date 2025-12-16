@@ -116,7 +116,7 @@
   import { ref, computed } from "vue"
   import { useNuxtApp } from "#app"
   import popupLogo from "@/assets/images/logo-h-black.png"
-  const { $fetch } = useNuxtApp()
+
 
   defineProps({
     open: Boolean

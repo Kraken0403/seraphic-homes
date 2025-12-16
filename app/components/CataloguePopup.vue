@@ -123,7 +123,7 @@
     /* -----------------------
       NUXT / LENIS
     ----------------------- */
-    const { $lenis, $fetch } = useNuxtApp()
+    const { $lenis } = useNuxtApp()
 
     /* -----------------------
       FORM STATE
