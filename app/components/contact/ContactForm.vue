@@ -144,29 +144,28 @@ async function submitForm() {
   status.value = "idle"
 
   try {
-    const { data, error } = await useFetch("/api/contact-request", {
+    const res = await $fetch("/api/catalog-request", {
       method: "POST",
       body: form.value
     })
 
-    if (error.value) throw error.value
-
-    if (data.value?.success) {
+    if (res?.success) {
       status.value = "success"
       form.value = {
         name: "",
         email: "",
         phone: "",
-        message: ""
+        code: "+91"
       }
     }
   } catch (err) {
-    console.error("Contact request failed:", err)
+    console.error("Catalogue request failed:", err)
     status.value = "error"
   } finally {
     loading.value = false
   }
 }
+
 </script>
 
 
