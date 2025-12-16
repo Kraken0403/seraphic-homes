@@ -56,16 +56,39 @@
           ></textarea>
 
           <!-- SUBMIT -->
-          <button type="submit" class="btn-pill mx-auto md:ml-[0px] md:mr-auto">
+          <button
+            type="submit"
+            class="btn-pill mx-auto md:ml-[0px] md:mr-auto"
+            :disabled="loading"
+            :class="{ 'opacity-60 pointer-events-none': loading }"
+          >
             <div class="btn-inner">
               <div class="btn-flex">
-                <div class="btn-text">Submit</div>
-                <div class="btn-text">Submit</div>
+                <div class="btn-text">
+                  {{ loading ? "Sending..." : "Submit" }}
+                </div>
+                <div class="btn-text">
+                  {{ loading ? "Sending..." : "Submit" }}
+                </div>
               </div>
             </div>
           </button>
 
         </form>
+        <p
+          v-if="status === 'success'"
+          class="text-green-600 text-center md:text-left"
+        >
+          Thank you! We’ll get back to you shortly.
+        </p>
+
+        <p
+          v-else-if="status === 'error'"
+          class="text-red-500 text-center md:text-left"
+        >
+          Something went wrong. Please try again later.
+        </p>
+
       </div>
 
     </div>
@@ -80,6 +103,9 @@ import AnimatedSplit from "@/components/AnimatedSplit.vue"
 const sectionRef = ref(null)
 const title1 = ref(null)
 
+/* -----------------------
+   FORM STATE
+----------------------- */
 const form = ref({
   name: "",
   email: "",
@@ -87,6 +113,12 @@ const form = ref({
   message: ""
 })
 
+const status = ref("idle") // idle | success | error
+const loading = ref(false)
+
+/* -----------------------
+   TITLE ANIMATION
+----------------------- */
 onMounted(() => {
   if (!sectionRef.value) return
 
@@ -102,10 +134,41 @@ onMounted(() => {
   observer.observe(sectionRef.value)
 })
 
-function submitForm() {
-  console.log("SUBMITTED:", form.value)
+/* -----------------------
+   SUBMIT HANDLER
+----------------------- */
+async function submitForm() {
+  if (loading.value) return
+
+  loading.value = true
+  status.value = "idle"
+
+  try {
+    const { data, error } = await useFetch("/api/contact-request", {
+      method: "POST",
+      body: form.value
+    })
+
+    if (error.value) throw error.value
+
+    if (data.value?.success) {
+      status.value = "success"
+      form.value = {
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      }
+    }
+  } catch (err) {
+    console.error("Contact request failed:", err)
+    status.value = "error"
+  } finally {
+    loading.value = false
+  }
 }
 </script>
+
 
 <style scoped lang="scss">
 /* INPUTS — FIX OVERFLOW */

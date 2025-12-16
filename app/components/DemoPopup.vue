@@ -95,11 +95,20 @@
             </select>
   
             <!-- BUTTON -->
-            <button type="submit" class="btn-pill mt-4">
+            <button
+              type="submit"
+              class="btn-pill mt-4"
+              :disabled="loading"
+              :class="{ 'opacity-60 pointer-events-none': loading }"
+            >
               <div class="btn-inner">
                 <div class="btn-flex">
-                  <div class="btn-text top">Book Demo</div>
-                  <div class="btn-text bottom">Book Demo</div>
+                  <div class="btn-text top">
+                    {{ loading ? "Booking..." : "Book Demo" }}
+                  </div>
+                  <div class="btn-text bottom">
+                    {{ loading ? "Booking..." : "Book Demo" }}
+                  </div>
                 </div>
               </div>
             </button>
@@ -110,15 +119,27 @@
   </template>
   
   <script setup>
-  import { ref } from "vue"
+  import { ref, watch, onUnmounted } from "vue"
+  import { useNuxtApp } from "#app"
   import popupLogo from "@/assets/images/logo-h-black.png"
   
-  defineProps({
+  /* -----------------------
+     PROPS & EMITS
+  ----------------------- */
+  const props = defineProps({
     open: Boolean
   })
   
   defineEmits(["close"])
   
+  /* -----------------------
+     NUXT / LENIS / FETCH
+  ----------------------- */
+  const { $lenis, $fetch } = useNuxtApp()
+  
+  /* -----------------------
+     FORM STATE
+  ----------------------- */
   const form = ref({
     name: "",
     email: "",
@@ -128,16 +149,69 @@
   })
   
   const status = ref("idle") // idle | success | error
+  const loading = ref(false)
   
+  /* -----------------------
+     SCROLL LOCK (SSR SAFE)
+  ----------------------- */
+  watch(
+    () => props.open,
+    (isOpen) => {
+      if (!process.client) return
+  
+      if (isOpen) {
+        $lenis?.stop()
+        document.body.style.overflow = "hidden"
+      } else {
+        $lenis?.start()
+        document.body.style.overflow = ""
+      }
+    },
+    { immediate: true }
+  )
+  
+  onUnmounted(() => {
+    if (!process.client) return
+    $lenis?.start()
+    document.body.style.overflow = ""
+  })
+  
+  /* -----------------------
+     SUBMIT HANDLER
+  ----------------------- */
   async function submit() {
-    try {
-      // 🔌 Replace with API / Web3Forms / backend
-      await new Promise(res => setTimeout(res, 900))
+  if (loading.value) return
+
+  loading.value = true
+  status.value = "idle"
+
+  try {
+    const { data, error } = await useFetch("/api/demo-request", {
+      method: "POST",
+      body: form.value
+    })
+
+    if (error.value) throw error.value
+
+    if (data.value?.success) {
       status.value = "success"
-    } catch (e) {
-      status.value = "error"
+
+      form.value = {
+        name: "",
+        email: "",
+        phone: "",
+        code: "+91",
+        product: ""
+      }
     }
+  } catch (err) {
+    console.error("Demo request failed:", err)
+    status.value = "error"
+  } finally {
+    loading.value = false
   }
+}
+
   </script>
   
   <style scoped>

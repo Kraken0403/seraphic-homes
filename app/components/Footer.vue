@@ -123,20 +123,20 @@
 
       <!-- Contact Column -->
       <div class="footer-col right">
-        <a href="tel:+919999099015" class="footer-link">
+        <a href="tel:+9198998087532" class="footer-link">
           <span class="link-inner">
             <span class="link-flex">
-              <span class="link-text">+91-90997 20649</span>
-              <!-- <span class="link-text">+91-9999099015</span> -->
+              <span class="link-text">+91-9898087501</span>
+              <span class="link-text">+91-98998087532</span>
             </span>
           </span>
         </a>
 
-        <a href="tel:+919999099012" class="footer-link">
+        <a href="tel:+919898087501" class="footer-link">
           <span class="link-inner">
             <span class="link-flex">
-              <span class="link-text">+91-9999099012</span>
-              <span class="link-text">+91-9999099012</span>
+              <span class="link-text">+91-9898087501</span>
+              <span class="link-text">+91-98998087532</span>
             </span>
           </span>
         </a>

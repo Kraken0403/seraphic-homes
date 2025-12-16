@@ -8,10 +8,10 @@ export const stores = [
     city: "Ahmedabad",
     description:
       "Experience curated luxury living at Seraphic Homes Ahmedabad. Discover Hästens handcrafted beds and Küche 7 premium kitchens in an immersive showroom environment.",
-    phone: "+91 9999099015",
-    email: "ahmedabad@seraphichomes.com",
+    phone: "+91-9898087501",
+    email: "contact@seraphichomes.com",
     mapLink:
-      "https://www.google.com/maps?q=Eyecon+Corporate+House+Sindhu+Bhavan+Road+Ahmedabad",
+      "https://maps.app.goo.gl/CzpNh388qcfdxzv18",
     mainImage: ahmedabadMain,
 
     gallery: [

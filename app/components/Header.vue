@@ -123,7 +123,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue"
+import { ref, onMounted, computed, watch, onUnmounted  } from "vue"
 import { useRoute, useNuxtApp } from "#app"
 // import gsap from "gsap"
 

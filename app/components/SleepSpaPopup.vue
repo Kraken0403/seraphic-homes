@@ -140,13 +140,32 @@
   })
   
   async function submit() {
-    try {
-      await new Promise(res => setTimeout(res, 900))
+  status.value = "idle"
+
+  try {
+    const res = await $fetch("/api/sleep-spa", {
+      method: "POST",
+      body: form.value
+    })
+
+    if (res?.success) {
       status.value = "success"
-    } catch (e) {
-      status.value = "error"
+
+      form.value = {
+        name: "",
+        email: "",
+        phone: "",
+        code: "+91",
+        date: "",
+        time: ""
+      }
     }
+  } catch (e) {
+    console.error(e)
+    status.value = "error"
   }
+}
+
   </script>
   
   <style scoped>

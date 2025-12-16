@@ -125,7 +125,7 @@ const services = ref([
   {
     title: "Luxury Consultation",
     text:
-      "Our specialists work closely with you to understand your vision and lifestyle. Each consultation is designed to bring personalized luxury into your home through curated solutions from Hästens and Küche.",
+      "Our specialists work closely with you to understand your vision and lifestyle. Each consultation is designed to bring personalized luxury into your home through curated solutions from Hästens and Küche 7.",
     image: img1
   },
   {

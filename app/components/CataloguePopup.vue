@@ -27,7 +27,7 @@
             luxury kitchens and handcrafted bedroom solutions.
           </p>
   
-          <!-- SUCCESS -->
+
           <div
             v-if="status === 'success'"
             class="text-center text-green-600"
@@ -36,8 +36,6 @@
               Thank you! Our catalogue will reach you shortly.
             </p>
           </div>
-  
-          <!-- ERROR -->
           <div
             v-else-if="status === 'error'"
             class="text-center"
@@ -86,14 +84,21 @@
             <button
               type="submit"
               class="btn-pill mt-4"
+              :disabled="loading"
+              :class="{ 'opacity-60 pointer-events-none': loading }"
             >
               <div class="btn-inner">
                 <div class="btn-flex">
-                  <div class="btn-text top">Get Catalogue</div>
-                  <div class="btn-text bottom">Get Catalogue</div>
+                  <div class="btn-text top">
+                    {{ loading ? "Sending..." : "Get Catalogue" }}
+                  </div>
+                  <div class="btn-text bottom">
+                    {{ loading ? "Sending..." : "Get Catalogue" }}
+                  </div>
                 </div>
               </div>
             </button>
+
           </form>
         </div>
       </div>
@@ -101,34 +106,100 @@
   </template>
   
   <script setup>
-  import { ref } from "vue"
-  import popupLogo from '@/assets/images/logo-h-black.png'
-  
-  defineProps({
-    open: Boolean,
-    logo: String
-  })
-  
-  defineEmits(["close"])
-  
-  const form = ref({
-    name: "",
-    email: "",
-    phone: "",
-    code: "+91"
-  })
-  
-  const status = ref("idle") // idle | success | error
-  
-  async function submit() {
-    try {
-      await new Promise(res => setTimeout(res, 900))
-      status.value = "success"
-    } catch (e) {
-      status.value = "error"
+    import { ref, watch, onUnmounted } from "vue"
+    import { useNuxtApp } from "#app"
+    import popupLogo from "@/assets/images/logo-h-black.png"
+
+    /* -----------------------
+      PROPS & EMITS
+    ----------------------- */
+    const props = defineProps({
+      open: Boolean,
+      logo: String
+    })
+
+    defineEmits(["close"])
+
+    /* -----------------------
+      NUXT / LENIS
+    ----------------------- */
+    const { $lenis, $fetch } = useNuxtApp()
+
+    /* -----------------------
+      FORM STATE
+    ----------------------- */
+    const form = ref({
+      name: "",
+      email: "",
+      phone: "",
+      code: "+91"
+    })
+
+    const status = ref("idle") // idle | success | error
+    const loading = ref(false)
+
+    /* -----------------------
+      SCROLL LOCK WHEN OPEN
+    ----------------------- */
+    watch(
+      () => props.open,
+      (isOpen) => {
+        if (!process.client) return
+
+        if (isOpen) {
+          $lenis?.stop()
+          document.body.style.overflow = "hidden"
+        } else {
+          $lenis?.start()
+          document.body.style.overflow = ""
+        }
+      },
+      { immediate: true }
+    )
+
+
+    onUnmounted(() => {
+      if (!process.client) return
+      $lenis?.start()
+      document.body.style.overflow = ""
+    })
+
+
+    /* -----------------------
+      SUBMIT HANDLER
+    ----------------------- */
+    async function submit() {
+      if (loading.value) return
+
+      loading.value = true
+      status.value = "idle"
+
+      try {
+        const res = await $fetch("/api/catalog-request", {
+          method: "POST",
+          body: form.value
+        })
+
+        if (res?.success) {
+          status.value = "success"
+
+          // reset form
+          form.value = {
+            name: "",
+            email: "",
+            phone: "",
+            code: "+91"
+          }
+        }
+      } catch (err) {
+        console.error("Catalogue request failed:", err)
+        status.value = "error"
+      } finally {
+        loading.value = false
+      }
     }
-  }
-  </script>
+</script>
+
   
   <style scoped>
   .input {

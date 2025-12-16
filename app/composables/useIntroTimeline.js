@@ -11,7 +11,7 @@ export function useIntroTimeline() {
     return new Promise((resolve) => {
       const check = () => {
         if (
-          hero?.heroImgRef &&
+          hero?.imageWrapRef &&
           header?.headerRef &&
           hero?.title1 &&
           hero?.title2
@@ -53,7 +53,7 @@ export function useIntroTimeline() {
     /* ----------------------------
        INITIAL STATES
     ---------------------------- */
-    $gsap.set(hero.heroImgRef, {
+    $gsap.set(hero.imageWrapRef, {
       scale: 1.15,
       filter: "blur(12px)"
     })
@@ -69,7 +69,7 @@ export function useIntroTimeline() {
     /* ----------------------------
        HERO IMAGE
     ---------------------------- */
-    tl.to(hero.heroImgRef, {
+    tl.to(hero.imageWrapRef, {
       scale: 1,
       filter: "blur(0px)",
       duration: 1.4

@@ -15,11 +15,11 @@
           Talk
         </h2>
         <a
-          href="tel:09099720649"
+          href="tel:09898087501"
           class="text-[clamp(16px,3vw,22px)]
                  hover:underline underline-offset-4"
         >
-          090997 20649
+          +91-98980 87501
         </a>
       </div>
 
@@ -39,7 +39,7 @@
           <span class="text-[#E96B2C] font-[900]">
             Seraphic Homes
           </span><br />
-          5th Floor, Eyecon Corporate House, Opp Allen Institute,<br />
+          Ground & Mazzanine Floor, Eyecon Corporate House, Opp Allen Institute,<br />
           Sindhubhavan Hall Lane, Off Sindhu Bhavan Road,<br />
           Ahmedabad 380054, Gujarat
         </p>
@@ -52,11 +52,11 @@
           Write
         </h2>
         <a
-          href="mailto:studio@seraphichomes.in"
+          href="mailto:contact@seraphichomes.in"
           class="text-[clamp(16px,3vw,22px)]
                  hover:underline underline-offset-4"
         >
-          studio@seraphichomes.in
+          contact@seraphichomes.in
         </a>
       </div>
     </div>
