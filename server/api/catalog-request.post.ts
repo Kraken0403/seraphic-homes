@@ -1,50 +1,43 @@
 import nodemailer from "nodemailer"
+const SMTP_CONFIG = {
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: "trivedibhavya1997@gmail.com",
+    pass: "lhgplrtseeebdovm"
+  }
+}
+
+const ADMIN_EMAIL = "contact@seraphichomes.in"
 
 export default defineEventHandler(async (event) => {
-
   try {
     const body = await readBody(event)
     const { name, email, phone, code } = body
 
     if (!name || !email || !phone) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "Missing required fields"
-      })
+      throw createError({ statusCode: 400, statusMessage: "Missing fields" })
     }
 
-    // ✅ SMTP CONFIG (example: Gmail / custom SMTP)
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    })
+    const transporter = nodemailer.createTransport(SMTP_CONFIG)
+    await transporter.verify()
 
-    // ✅ ADMIN EMAIL
     await transporter.sendMail({
-      from: `"Seraphic Homes" <${process.env.SMTP_USER}>`,
-      to: process.env.ADMIN_EMAIL,
+      from: `"Seraphic Homes" <${SMTP_CONFIG.auth.user}>`,
+      to: ADMIN_EMAIL,
       subject: "📘 New Catalogue Request",
       html: `
         <h2>New Catalogue Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${code} ${phone}</p>
-        <br/>
-        <p>Sent from Seraphic Homes website</p>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${code} ${phone}</p>
       `
     })
 
     return { success: true }
-  } catch (err: any) {
+  } catch (err) {
     console.error("Catalog mail error:", err)
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Mail send failed"
-    })
+    throw createError({ statusCode: 500, statusMessage: "Mail send failed" })
   }
 })

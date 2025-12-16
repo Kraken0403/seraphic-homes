@@ -1,9 +1,17 @@
 import nodemailer from "nodemailer"
 
+const SMTP_CONFIG = {
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "trivedibhavya1997@gmail.com",
+      pass: "lhgplrtseeebdovm"
+    }
+  }
+
 export default defineEventHandler(async (event) => {
   try {
-    console.log("📅 Demo request API HIT")
-
     const body = await readBody(event)
     const { name, email, phone, code, product } = body
 
@@ -11,26 +19,19 @@ export default defineEventHandler(async (event) => {
       throw createError({ statusCode: 400 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: Number(process.env.SMTP_PORT) === 465,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    })
+    const transporter = nodemailer.createTransport(SMTP_CONFIG)
+    await transporter.verify()
 
     await transporter.sendMail({
-      from: `"Seraphic Homes" <${process.env.SMTP_USER}>`,
-      to: process.env.ADMIN_EMAIL,
+      from: `"Seraphic Homes" <${SMTP_CONFIG.auth.user}>`,
+      to: ADMIN_EMAIL,
       subject: "📅 New Demo Booking Request",
       html: `
         <h2>New Demo Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${code} ${phone}</p>
-        <p><strong>Product:</strong> ${product}</p>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${code} ${phone}</p>
+        <p><b>Product:</b> ${product}</p>
       `
     })
 
@@ -40,3 +41,4 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500 })
   }
 })
+

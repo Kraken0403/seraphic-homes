@@ -1,56 +1,43 @@
 import nodemailer from "nodemailer"
+const SMTP_CONFIG = {
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: "trivedibhavya1997@gmail.com",
+      pass: "lhgplrtseeebdovm"
+    }
+  }
 
 export default defineEventHandler(async (event) => {
   try {
-    console.log("🛏️ Sleep Spa booking API HIT")
-
     const body = await readBody(event)
     const { name, email, phone, code, date, time } = body
 
     if (!name || !email || !phone || !date || !time) {
-      throw createError({
-        statusCode: 400,
-        statusMessage: "Missing required fields"
-      })
+      throw createError({ statusCode: 400 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: Number(process.env.SMTP_PORT) === 465,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      }
-    })
-
-    // optional but recommended
+    const transporter = nodemailer.createTransport(SMTP_CONFIG)
     await transporter.verify()
 
-    const info = await transporter.sendMail({
-      from: `"Seraphic Homes" <${process.env.SMTP_USER}>`,
-      to: process.env.ADMIN_EMAIL,
+    await transporter.sendMail({
+      from: `"Seraphic Homes" <${SMTP_CONFIG.auth.user}>`,
+      to: ADMIN_EMAIL,
       subject: "🛏️ New Sleep Spa Booking Request",
       html: `
         <h2>New Sleep Spa Booking</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${code} ${phone}</p>
-        <p><strong>Preferred Date:</strong> ${date}</p>
-        <p><strong>Preferred Time:</strong> ${time}</p>
-        <br/>
-        <p>Submitted from Seraphic Homes website</p>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${code} ${phone}</p>
+        <p><b>Date:</b> ${date}</p>
+        <p><b>Time:</b> ${time}</p>
       `
     })
 
-    console.log("📨 Sleep Spa mail sent:", info.accepted)
-
     return { success: true }
   } catch (err) {
-    console.error("❌ Sleep Spa mail error:", err)
-    throw createError({
-      statusCode: 500,
-      statusMessage: "Failed to send booking request"
-    })
+    console.error("Sleep Spa mail error:", err)
+    throw createError({ statusCode: 500 })
   }
 })

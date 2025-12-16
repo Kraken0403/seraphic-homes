@@ -65,11 +65,11 @@
             <div class="btn-inner">
               <div class="btn-flex">
                 <div class="btn-text">
-                  {{ loading ? "Sending..." : "Submit" }}
-                </div>
-                <div class="btn-text">
-                  {{ loading ? "Sending..." : "Submit" }}
-                </div>
+                    {{ loading ? "Sending..." : "Submit" }}
+                  </div>
+                  <div class="btn-text">
+                    {{ loading ? "Sending..." : "Submit" }}
+                  </div>
               </div>
             </div>
           </button>
@@ -115,6 +115,7 @@ const form = ref({
 
 const status = ref("idle") // idle | success | error
 const loading = ref(false)
+const { $fetch } = useNuxtApp()
 
 /* -----------------------
    TITLE ANIMATION
@@ -144,7 +145,7 @@ async function submitForm() {
   status.value = "idle"
 
   try {
-    const res = await $fetch("/api/catalog-request", {
+    const res = await $fetch("/api/contact-request", {
       method: "POST",
       body: form.value
     })
@@ -155,11 +156,11 @@ async function submitForm() {
         name: "",
         email: "",
         phone: "",
-        code: "+91"
+        message: ""
       }
     }
   } catch (err) {
-    console.error("Catalogue request failed:", err)
+    console.error("Contact request failed:", err)
     status.value = "error"
   } finally {
     loading.value = false
