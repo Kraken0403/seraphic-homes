@@ -8,8 +8,9 @@ const SMTP_CONFIG = {
       pass: "lhgplrtseeebdovm"
     }
   }
+  const ADMIN_EMAIL = "contact@seraphichomes.in"
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: any) => {
   try {
     const body = await readBody(event)
     const { name, email, phone, code, date, time } = body

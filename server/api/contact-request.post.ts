@@ -9,6 +9,7 @@ const SMTP_CONFIG = {
     }
   }
 
+const ADMIN_EMAIL = "contact@seraphichomes.in"
   
 export default defineEventHandler(async (event) => {
     try {
