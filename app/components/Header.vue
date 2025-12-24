@@ -19,12 +19,7 @@
       class="hidden md:flex items-center gap-10 text-[14px] uppercase tracking-wide font-[600]"
       :style="{ color: computedNavColor }"
     >
-      <NuxtLink to="/services" class="nav-link">
-        <span class="nav-inner"><span class="nav-flex">
-          <span class="nav-text">Services</span>
-          <span class="nav-text">Services</span>
-        </span></span>
-      </NuxtLink>
+
 
       <NuxtLink to="/about" class="nav-link">
         <span class="nav-inner"><span class="nav-flex">
@@ -40,10 +35,19 @@
         </span></span>
       </NuxtLink>
 
+      
+
       <NuxtLink to="/stores" class="nav-link">
         <span class="nav-inner"><span class="nav-flex">
           <span class="nav-text">Store Locator</span>
           <span class="nav-text">Store Locator</span>
+        </span></span>
+      </NuxtLink>
+
+      <NuxtLink to="/services" class="nav-link">
+        <span class="nav-inner"><span class="nav-flex">
+          <span class="nav-text">Services</span>
+          <span class="nav-text">Services</span>
         </span></span>
       </NuxtLink>
 

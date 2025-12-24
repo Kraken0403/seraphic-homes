@@ -127,7 +127,7 @@
           <span class="link-inner">
             <span class="link-flex">
               <span class="link-text">+91-9898087501</span>
-              <span class="link-text">+91-98998087532</span>
+              <span class="link-text">+91-9898087501</span>
             </span>
           </span>
         </a>
@@ -135,7 +135,7 @@
         <a href="tel:+919898087501" class="footer-link">
           <span class="link-inner">
             <span class="link-flex">
-              <span class="link-text">+91-9898087501</span>
+              <span class="link-text">+91-9898087532</span>
               <span class="link-text">+91-98998087532</span>
             </span>
           </span>

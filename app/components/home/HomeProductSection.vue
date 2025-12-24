@@ -14,7 +14,7 @@
     <!-- Küche 7 -->
     <HomeProductBlock
       title="Küche 7"
-      description="Driven by German precision and modern design, Küche 7 creates modular kitchens that define contemporary sophistication. Each design balances innovation with functionality, creating spaces that are both beautiful and enduring."
+      description="Indian brand driven by German precision and modern design, Küche 7 creates stainless steel modular kitchens that define contemporary sophistication. Each design balances innovation with functionality, creating spaces that are both beautiful and enduring."
       :image="hero"
       buttonTwoLabel="CATALOGUE"
       @open-catalogue="openCatalogue"

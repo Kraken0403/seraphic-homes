@@ -1,7 +1,7 @@
 import ahmedabadMain from "@/assets/images/hero.jpg"
 import rajkotMain from "@/assets/images/hero.jpg"
 import vadodaraMain from "@/assets/images/hero.jpg"
-import delhiMain from "@/assets/images/hero.jpg"
+import delhiMain from "@/assets/images/delhi.jpeg"
 import mumbaiMain from "@/assets/images/hero.jpg"
 import puneMain from "@/assets/images/hero.jpg"
 import raipurMain from "@/assets/images/hero.jpg"
@@ -61,7 +61,13 @@ export const stores = [
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/T8yhJqkefAGJniqx7",
     mainImage: vadodaraMain,
-    gallery: []
+    gallery: [
+        "/stores/img-001.webp",
+        "/stores/img-004.webp",
+        "/stores/img-009.webp",
+        "/stores/img-010.webp",
+        "/stores/img-014.webp",
+      ]
   },
 
   {
@@ -103,7 +109,13 @@ export const stores = [
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/2EM7gcuonXEd73hq5",
     mainImage: puneMain,
-    gallery: []
+    gallery: [
+        "/stores/img-001.webp",
+        "/stores/img-004.webp",
+        "/stores/img-009.webp",
+        "/stores/img-010.webp",
+        "/stores/img-014.webp",
+      ]
   },
 
   {
@@ -117,7 +129,13 @@ export const stores = [
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/z7hQEtfqLU6H2LUTA",
     mainImage: raipurMain,
-    gallery: []
+    gallery: [
+        "/stores/img-001.webp",
+        "/stores/img-004.webp",
+        "/stores/img-009.webp",
+        "/stores/img-010.webp",
+        "/stores/img-014.webp",
+      ]
   },
 
   {
@@ -131,7 +149,13 @@ export const stores = [
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/pNYWsxi3NbdvrPP27",
     mainImage: kolkataMain,
-    gallery: []
+    gallery: [
+        "/stores/img-001.webp",
+        "/stores/img-004.webp",
+        "/stores/img-009.webp",
+        "/stores/img-010.webp",
+        "/stores/img-014.webp",
+      ]
   },
 
   {
@@ -145,7 +169,13 @@ export const stores = [
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/CQGxe1pqa1PiQM136",
     mainImage: jaipurMain,
-    gallery: []
+    gallery: [
+        "/stores/img-001.webp",
+        "/stores/img-004.webp",
+        "/stores/img-009.webp",
+        "/stores/img-010.webp",
+        "/stores/img-014.webp",
+      ]
   },
 
   {
@@ -159,6 +189,12 @@ export const stores = [
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/d1vckmoR8y1MnkKe7",
     mainImage: chandigarhMain,
-    gallery: []
+    gallery: [
+        "/stores/img-001.webp",
+        "/stores/img-004.webp",
+        "/stores/img-009.webp",
+        "/stores/img-010.webp",
+        "/stores/img-014.webp",
+      ]
   }
 ]

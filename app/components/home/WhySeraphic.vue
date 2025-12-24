@@ -4,11 +4,11 @@
       class="relative w-full bg-[#ffffff] overflow-hidden pb-[80px] md:pb-[110px] "
     >
       <!-- ORANGE PATTERN (absolute) -->
-      <img
+      <!-- <img
         :src="patternImg"
         alt=""
         class="pointer-events-none select-none absolute left-0 bottom-0 w-[65%] max-w-[460px] opacity-20"
-      />
+      /> -->
   
       <!-- FLOATING IMAGE (absolute) -->
       <img
@@ -49,11 +49,11 @@
               /> -->
               <p class="text-[clamp(16px,3vw,22px)] text-[#1a1a1a] font-[500] leading-[1.4] mb-[15px]">Seraphic Homes redefines luxury living through authenticity, craftsmanship, and curation.</p>
               <ul class="text-[#1a1a1a] leading-[1.4] text-[clamp(16px,3vw,22px)] mb-[60px] font-[500] space-y-2 list-none">
-
+<!-- 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]">
                   <span class="absolute left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>
                   <p class="font-[500]"><strong>Exclusive global partnerships</strong> with Hästens & Küche 7.</p>
-                </li>
+                </li> -->
 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]">
                   <span class="absolute left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>

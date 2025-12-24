@@ -5,9 +5,11 @@
       class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#111]"
     >
       <!-- LOGO -->
-      <h2 class="text-[#FAE8D5] text-[clamp(32px,5vw,52px)] leading-[1]">
+      <h2 class="text-[#FAE8D5] text-[clamp(32px,5vw,52px)] leading-[1] mb-[15px]">
         Seraphic Homes
       </h2>
+
+      <p class="text-[#FAE8D5] text-[clamp(16px,2vw,24px)] font-[500] leading-[1.4]">Your next Big Change</p>
 
       <!-- LOADING BAR -->
       <div class="mt-8 w-[160px] h-[2px] bg-white/20 overflow-hidden">

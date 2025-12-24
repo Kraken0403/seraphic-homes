@@ -88,10 +88,10 @@
                         <p class="text-white text-[clamp(16px,3vw,22px)] font-[500] leading-[1]">
                           {{ item.title }}
                         </p>
-                        <p class="text-white/80 text-[clamp(16px,3vw,22px)] mt-[5px]">
+                        <p class="text-white/80 text-[clamp(16px,2.4vw,18px)] mt-[5px]">
                           {{ item.caption }}
                         </p>
-                        <p class="text-white/70 text-[clamp(16px,3vw,22px)] mt-[20px] leading-[1.4]">
+                        <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[20px] leading-[1.4]">
                           {{ item.address }}
                         </p>
                       </div>

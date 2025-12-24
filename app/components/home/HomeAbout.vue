@@ -9,7 +9,7 @@
       ref="leftWrap"
       class="absolute hidden md:block
              left-[5%] top-[60%] -translate-y-1/2
-             w-[160px] md:w-[15vw] overflow-hidden"
+             w-[130px] md:w-[14vw] overflow-hidden"
     >
       <img
         ref="leftImg"
@@ -23,8 +23,8 @@
     <div
       ref="rightWrap"
       class="absolute hidden md:block
-             right-4 md:right-20 top-[45%] -translate-y-1/2
-             w-[180px] md:w-[16vw] overflow-hidden"
+             right-[4%] top-[45%] -translate-y-1/2
+             w-[150px] md:w-[14vw] overflow-hidden"
     >
       <img
         ref="rightImg"
@@ -39,7 +39,7 @@
       <AnimatedSplit
         ref="paragraph"
         tag="p"
-        text="Seraphic Homes curates luxurious living with exclusive offerings from Hästens and Küche 7 premium German kitchens. Blending comfort, craftsmanship, and timeless design, they create elegant spaces tailored for refined lifestyles."
+        text="Seraphic Homes curates luxurious living with exclusive offerings from Hästens and Küche7 premium kitchens. Blending comfort, craftsmanship, and timeless design, they create elegant spaces tailored for refined lifestyles."
         wrap-class="text-[clamp(22px,2vw,42px)] font-[500] leading-[1.4] text-[#1a1a1a]"
         :char-stagger="0"
         :word-styles="{

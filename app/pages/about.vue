@@ -5,9 +5,9 @@
     <AboutHero />
 
     <!-- ORIGINS SECTION -->
-    <!-- <AboutOrigins />
+    <AboutOrigins />
     <AboutProjects />
-    <OurTeam /> -->
+    <OurTeam />
   </div>
 </template>
 
