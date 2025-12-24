@@ -9,7 +9,7 @@ export const stores = [
     description:
       "Experience curated luxury living at Seraphic Homes Ahmedabad. Discover Hästens handcrafted beds and Küche 7 premium kitchens in an immersive showroom environment.",
     phone: "+91-9898087501",
-    email: "contact@seraphichomes.com",
+    email: "contact@seraphichomes.in",
     mapLink:
       "https://maps.app.goo.gl/CzpNh388qcfdxzv18",
     mainImage: ahmedabadMain,
@@ -29,7 +29,7 @@ export const stores = [
     description:
       "Visit Seraphic Homes Rajkot to explore refined interior solutions featuring Küche 7 modular kitchens and premium European finishes.",
     phone: "+91 9999099012",
-    email: "rajkot@seraphichomes.com",
+    email: "rajkot@seraphichomes.in",
     mapLink:
       "https://www.google.com/maps?q=Kalawad+Road+Rajkot",
     mainImage: rajkotMain,
