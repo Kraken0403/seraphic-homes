@@ -24,9 +24,9 @@
               ←
             </button>
 
-            <span class="text-xl opacity-70">
+            <!-- <span class="text-xl opacity-70">
               {{ activeIndex + 1 }}/{{ projects.length }}
-            </span>
+            </span> -->
 
             <button
               @click="swiper?.slideNext()"
@@ -165,9 +165,9 @@ const projects = ref([
     address: 'Opp. Masoom School, Opp, Selenium Sky Apartment off Kalawad Road,Mota Mauva,Rajkot-360005',
     map: "https://maps.app.goo.gl/n3podk3YHd3s1hvK6"
   },
-  { title: "Surat", image: proj1 },
-  { title: "Vadodara", image: proj2 },
-  { title: "Mumbai", image: proj1 }
+  // { title: "Surat", image: proj1 },
+  // { title: "Vadodara", image: proj2 },
+  // { title: "Mumbai", image: proj1 }
 ]);
 
 function onSwiper(instance) {
