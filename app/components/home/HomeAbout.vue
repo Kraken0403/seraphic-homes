@@ -1,7 +1,7 @@
 <template>
   <section
     ref="sectionEl"
-    class="relative z-[20] bg-[#fff] w-full h-[70vh] md:h-screen
+    class="relative z-[20] bg-[#fff] w-full min-h-[100vh] py-[130px]
            flex items-center justify-center overflow-hidden px-[20px]"
   >
     <!-- LEFT IMAGE WRAPPER -->
@@ -39,7 +39,19 @@
       <AnimatedSplit
         ref="paragraph"
         tag="p"
-        text="Seraphic Homes curates luxurious living with exclusive offerings from Hästens and Küche7 premium kitchens. Blending comfort, craftsmanship, and timeless design, they create elegant spaces tailored for refined lifestyles."
+        text="At Seraphic Homes, we curate exceptional living environments rooted in craftsmanship, comfort, and enduring design. With a legacy of over two decades in luxury interiors, we bring together the finest global and Indian brands to create spaces that are as functional as they are beautiful. "
+        wrap-class="text-[clamp(22px,2vw,42px)] font-[500] leading-[1.4] text-[#1a1a1a]"
+        :char-stagger="0"
+        :word-styles="{
+          'Seraphic Homes': 'text-[#E96B2C] font-[900]',
+  
+        }"
+      />
+
+      <AnimatedSplit
+        ref="paragraphTwo"
+        tag="p"
+        text="As proud representatives of Hästens, the world’s most iconic handcrafted bed brand from Sweden, and Küche 7, India’s leading manufacturer of 100% stainless steel modular kitchens, Wardrobes and Vanities , we offer discerning homeowners an elevated approach to modern living  where every detail is intentional and every experience is seamless"
         wrap-class="text-[clamp(22px,2vw,42px)] font-[500] leading-[1.4] text-[#1a1a1a]"
         :char-stagger="0"
         :word-styles="{
@@ -79,6 +91,7 @@ const leftImg = ref(null)
 const rightImg = ref(null)
 
 const paragraph = ref(null)
+const paragraphTwo = ref(null)
 
 onMounted(() => {
   const { $gsap } = useNuxtApp()
@@ -114,6 +127,8 @@ onMounted(() => {
     })
     .add(() => {
       paragraph.value?.play?.()
+    }, "-=0.6").add(() => {
+      paragraphTwo.value?.play?.()
     }, "-=0.6")
 
   /* -----------------------------

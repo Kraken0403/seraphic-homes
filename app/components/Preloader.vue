@@ -9,7 +9,7 @@
         Seraphic Homes
       </h2>
 
-      <p class="text-[#FAE8D5] text-[clamp(16px,2vw,24px)] font-[500] leading-[1.4]">Your next Big Change</p>
+      <p class="text-[#FAE8D5] text-[clamp(16px,2vw,18px)] font-[500] leading-[1.4]">Your next Big Change</p>
 
       <!-- LOADING BAR -->
       <div class="mt-8 w-[160px] h-[2px] bg-white/20 overflow-hidden">

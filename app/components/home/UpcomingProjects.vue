@@ -141,7 +141,7 @@ import "swiper/css";
 
 import AnimatedSplit from "@/components/AnimatedSplit.vue";
 
-import proj1 from "@/assets/images/kid.png";
+import proj1 from "@/assets/images/abd.jpeg";
 import proj2 from "@/assets/images/rajkot.jpg";
 
 const sectionRef = ref(null);

@@ -29,7 +29,7 @@
           </h2>
 
           <p
-            class="text-white/90 max-w-lg
+            class="text-white 
                    text-[clamp(18px,3vw,20px)]
                    leading-relaxed"
           >

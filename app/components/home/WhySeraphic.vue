@@ -47,7 +47,7 @@
                 tag="p"
                 wrap-class="text-[#1a1a1a] leading-[1.4] text-[clamp(1rem,1.3vw,1.2rem)] mb-[30px]"
               /> -->
-              <p class="text-[clamp(16px,3vw,22px)] text-[#1a1a1a] font-[500] leading-[1.4] mb-[15px]">Seraphic Homes redefines luxury living through authenticity, craftsmanship, and curation.</p>
+              <p class="text-[clamp(16px,3vw,22px)] text-[#1a1a1a] font-[500] leading-[1.4] mb-[15px]">Seraphic Homes is more than a showroom,  it is a destination for thoughtfully curated luxury for your next big change.</p>
               <ul class="text-[#1a1a1a] leading-[1.4] text-[clamp(16px,3vw,22px)] mb-[60px] font-[500] space-y-2 list-none">
 <!-- 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]">
@@ -57,25 +57,30 @@
 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]">
                   <span class="absolute left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>
-                  <p class="font-[500]"><strong>Heritage craftsmanship</strong> and sustainable materials.</p>
+                  <p class="font-[500]">Exclusive partnerships with <strong>Hästens and Küche 7</strong></p>
   
                 </li>
 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]" >
                   <span class="absolute font-[500] leading-[1.4] left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>
-                  <p class="font-[500]"><strong>Personilzed Luxury Consultations</strong> for every client.</p>
+                  <p class="font-[500]">A strong focus on craftsmanship, durability, and premium materials</p>
                   
                 </li>
 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]">
                   <span class="absolute font-[500] leading-[1.4] left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>
-                  <p class="font-[500]"><strong>Seemless delivery & installations</strong> by certified experts.</p>
+                  <p class="font-[500]">Bespoke consultations tailored to your lifestyle and space</p>
                           
                 </li>
 
                 <li class="relative pl-[20px] font-[500] leading-[1.4]">
                   <span class="absolute font-[500] leading-[1.4] left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>
-                  <p class="font-[500]"><strong>An elevated design journey</strong> ,from concept to completion.</p>
+                  <p class="font-[500]">Seamless execution by trained and certified installation teams</p>
+          
+                </li>
+                <li class="relative pl-[20px] font-[500] leading-[1.4]">
+                  <span class="absolute font-[500] leading-[1.4] left-0 top-[0.55em] w-2 h-2 bg-[#1a1a1a] rounded-full"></span>
+                  <p class="font-[500]">A refined, end-to-end journey from concept to completion</p>
           
                 </li>
               </ul>
@@ -102,7 +107,7 @@
   import Button from "@/components/Button.vue";
   
   import patternImg from "@/assets/images/icons-group.png";
-  import floatImgSrc from "@/assets/images/kids.png";
+  import floatImgSrc from "@/assets/images/right-2.jpg";
   
   const sectionRef = ref(null);
   const floatImgEl = ref(null);

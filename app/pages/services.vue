@@ -20,9 +20,9 @@
         "
         :class="i % 2 === 0 ? 'lg:order-1' : 'lg:order-2'"
       >
-        <span class="mb-4 text-[14px] tracking-widest opacity-50">
+        <!-- <span class="mb-4 text-[14px] tracking-widest opacity-50">
           {{ String(i + 1).padStart(2, '0') }}
-        </span>
+        </span> -->
 
         <AnimatedSplit
           :ref="el => titleRefs[i] = el"
@@ -105,8 +105,8 @@ import Button from "@/components/Button.vue"
 
 /* SEO */
 useSeoMeta({
-  title: "Luxury Interior Solutions | Seraphic Homes",
-  description: "Premium interiors, kitchens & handcrafted beds."
+  title: "Luxury Interior Solutions | Hästens Beds & Küche 7 Kitchens, Wardrobes and Vanities | Seraphic Homes",
+  description: "From personalized consultation to installation and after-sales care, Seraphic Homes offers bespoke interior solutions featuring Hästens handcrafted beds and Küche 7 stainless steel modular kitchens, wardrobes and vanities with premium appliances."
 })
 
 definePageMeta({
@@ -125,31 +125,31 @@ const services = ref([
   {
     title: "Luxury Consultation",
     text:
-      "Our specialists work closely with you to understand your vision and lifestyle. Each consultation is designed to bring personalized luxury into your home through curated solutions from Hästens and Küche 7.",
+      "Our experts take the time to understand your lifestyle, preferences, and spatial requirements. Each consultation is tailored to curate the ideal solution using Hästens beds and Küche 7 kitchens wardrobes and vanities, ensuring a perfect balance of comfort, design, and performance.",
     image: img1
   },
   {
     title: "Interior Design Integration",
     text:
-      "We collaborate with your architects and designers to integrate premium kitchens and handcrafted beds seamlessly. Every design complements your space while reflecting refined aesthetics.",
+      "We collaborate seamlessly with architects and interior designers to integrate our products into your home. Every element is designed to complement your space while maintaining aesthetic harmony and functional excellence.",
     image: img2
   },
   {
     title: "Customization",
     text:
-      "Choose from a range of finishes, textures, and materials to create a design that’s uniquely yours. Our customization ensures every detail aligns with your personality and style.",
+      "Choose from a wide range of finishes, configurations, and materials. From kitchen layouts to bed specifications, every detail is customised to reflect your personal style and requirements.",
     image: img3
   },
   {
     title: "Professional Installation",
     text:
-      "Our trained installation experts bring precision and care to every project. Each element is fitted flawlessly to deliver enduring performance and aesthetic excellence.",
+      "Our trained specialists ensure precise installation with uncompromising attention to detail. Each project is executed to deliver lasting performance, durability, and visual elegance.",
     image: img4
   },
   {
     title: "After-Sales Support",
     text:
-      "Our commitment extends beyond installation. From product guidance to maintenance, our after-sales team ensures your experience remains seamless and satisfying.",
+      "Our relationship continues beyond installation. From maintenance guidance to ongoing support, our after-sales team ensures peace of mind and long-term satisfaction",
     image: img5
   }
 ])

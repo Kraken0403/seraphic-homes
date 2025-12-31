@@ -47,7 +47,7 @@
   >
     <AnimatedSplit
       ref="title1"
-      text="Crafted Luxury"
+      text="Luxury, Crafted"
       tag="h1"
       wrap-class="
         font-[300]
@@ -59,7 +59,7 @@
 
     <AnimatedSplit
       ref="title2"
-      text="for the Modern Home"
+      text="for a Life Well Lived"
       tag="h1"
       wrap-class="
         text-[#FAE8D5]

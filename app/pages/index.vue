@@ -20,9 +20,9 @@ import WhySeraphic from "@/components/home/WhySeraphic.vue"
 import UpcomingProjects from "@/components/home/UpcomingProjects.vue"
 
 useSeoMeta({
-  title: "Seraphic Homes | Luxury Living Redefined",
+  title: "Luxury Beds & Modular Kitchens in India | Seraphic Homes",
   description:
-    "Seraphic Homes creates thoughtfully designed luxury residences that blend architecture, comfort, and timeless elegance."
+    "Seraphic Homes is India’s destination for refined luxury living, featuring Hästens handcrafted Swedish beds and Küche 7 premium stainless steel modular kitchens, Wardrobes and Vanities with Miele and Siemens appliances. Experience bespoke interiors in Ahmedabad and across 10 other locations pan India. "
 })
 
 const heroRef = ref(null)
