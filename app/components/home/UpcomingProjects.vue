@@ -155,7 +155,7 @@ const projects = ref([
     title: "Ahmedabad", 
     image: proj1,
     caption: 'Seraphic Homes', 
-    address: '5th Floor, Eyecon Corporate House, Opp Allen Institute, Sindhubhavan hall Lane, Off Sindhu Bhavan Road, Ahmedabad 380054, Gujarat',
+    address: 'Ground & Mezzanine floor, Eyecon House, Sindhu Bhavan Marg, opp. Allen Career Institute, PRL Colony, Bodakdev, Ahmedabad, Gujarat 380059',
     map: 'https://maps.app.goo.gl/uHYFESMKGcY2csiC8'
   },
   { 

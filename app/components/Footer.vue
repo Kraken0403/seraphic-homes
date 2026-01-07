@@ -16,9 +16,7 @@
       <p
         class="w-full text-center md:w-[50%] text-[clamp(16px,3vw,22px)] font-[500] text-[#1a1a1a] -mt-[20px] md:-mt-[40px]"
       >
-        Experience the world of curated luxury living. Book a demo or visit our
-        Seraphic Homes showrooms to discover Hästens handcrafted beds and Küche 7
-        modular kitchens.
+          Book a demo or visit Seraphic Homes to experience the craftsmanship behind Hästens beds and Küche 7 stainless steel kitchens, wardrobes and vanitie
       </p>
 
       <Button

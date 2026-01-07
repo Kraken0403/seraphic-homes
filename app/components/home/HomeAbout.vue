@@ -51,7 +51,7 @@
       <AnimatedSplit
         ref="paragraphTwo"
         tag="p"
-        text="As proud representatives of Hästens, the world’s most iconic handcrafted bed brand from Sweden, and Küche 7, India’s leading manufacturer of 100% stainless steel modular kitchens, Wardrobes and Vanities , we offer discerning homeowners an elevated approach to modern living  where every detail is intentional and every experience is seamless"
+        text="As proud representatives of Hästens, the world’s most iconic handcrafted bed brand from Sweden, and Küche 7, India’s leading manufacturer of 100% stainless steel modular kitchens, Wardrobes and Vanities , we offer discerning homeowners an elevated approach to modern living  where every detail is intentional and every experience is seamless."
         wrap-class="text-[clamp(22px,2vw,42px)] font-[500] leading-[1.4] text-[#1a1a1a]"
         :char-stagger="0"
         :word-styles="{

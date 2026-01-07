@@ -125,7 +125,7 @@ const services = ref([
   {
     title: "Luxury Consultation",
     text:
-      "Our experts take the time to understand your lifestyle, preferences, and spatial requirements. Each consultation is tailored to curate the ideal solution using Hästens beds and Küche 7 kitchens wardrobes and vanities, ensuring a perfect balance of comfort, design, and performance.",
+      "Our experts take the time to understand your lifestyle, preferences, and spatial requirements. Each consultation is tailored to curate the ideal solution using Hästens beds and Küche 7 kitchens wardrobes and vanities, ensuring a perfect balance of comfort, design, and performance",
     image: img1
   },
   {
