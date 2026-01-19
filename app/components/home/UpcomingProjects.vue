@@ -1,7 +1,7 @@
 <template>
   <section
     ref="sectionRef"
-    class="relative w-full bg-white overflow-hidden pb-[80px] md:pb-[110px] "
+    class="relative w-full bg-white overflow-hidden pb-[80px] md:pb-[160px] "
   >
     <!-- MAIN CONTAINER -->
     <div class="relative z-10 w-full mx-auto px-[20px] md:px-[30px]">
@@ -11,7 +11,7 @@
         <div class="flex flex-col justify-between">
           <AnimatedSplit
             ref="title"
-            text="Store Locations"
+            text="Our Stores"
             tag="h2"
             wrap-class="text-[#1a1a1a] leading-[0.95] text-[clamp(46px,5.1vw,72px)]"
           />
@@ -63,6 +63,13 @@
                 class="group block"
               >
                 <!-- CARD -->
+                <p
+                  class="text-[#111] uppercase text-[16px] flex items-center gap-[5px]
+                        font-[900] mb-[10px]"
+                >
+                  <span class="w-[9px] h-[9px] block bg-[#111] rounded-full"></span>
+                  {{ item.title }}
+                </p>
                 <div
                   class="relative w-full h-[90vh] overflow-hidden card"
                   :style="{
@@ -86,11 +93,9 @@
                       <!-- TEXT -->
                       <div class="flex flex-col w-[80%]">
                         <p class="text-white text-[clamp(16px,3vw,22px)] font-[500] leading-[1]">
-                          {{ item.title }}
-                        </p>
-                        <p class="text-white/80 text-[clamp(16px,2.4vw,18px)] mt-[5px]">
                           {{ item.caption }}
                         </p>
+
                         <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[20px] leading-[1.4]">
                           {{ item.address }}
                         </p>

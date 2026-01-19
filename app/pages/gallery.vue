@@ -72,7 +72,7 @@ definePageMeta({
 ----------------------- */
 
 // create list dynamically (example: 60 images)
-const allImages = Array.from({ length: 30 }).map((_, i) => ({
+const allImages = Array.from({ length: 23 }).map((_, i) => ({
   id: i,
   src: `/gallery/img-${String(i + 1).padStart(3, "0")}.webp`
 

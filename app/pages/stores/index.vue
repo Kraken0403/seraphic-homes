@@ -95,11 +95,16 @@
 
 <script setup>
     import { ref, onMounted } from "vue"
-    const nuxtApp = useNuxtApp()
+    import { useSeoMeta, useNuxtApp } from "#imports"
+    // const nuxtApp = useNuxtApp()
     import AnimatedSplit from "@/components/AnimatedSplit.vue"
     import { stores } from "@/data/stores"
     import blackLogo from '@/assets/images/logo-h-black.png'
-
+    useSeoMeta({
+      title: "Seraphic Homes Ahmedabad | Hästens Beds & Küche 7 Kitchens, wardrobes and vanities",
+      description:
+        "Visit Seraphic Homes Ahmedabad to experience Hästens handcrafted Swedish beds and Küche 7 stainless steel modular kitchens, wardrobes and vanities  with Miele and Siemens appliances. Book your consultation today"
+    })
     // definePageMeta({
     //     layout: "special",
     //     headerLogo: blackLogo

@@ -1,7 +1,7 @@
 <template>
   <section
     ref="sectionEl"
-    class="relative w-full h-[90vh] md:h-[90vh] px-[15px] overflow-hidden"
+    class="relative w-full h-[90vh] md:h-[100vh] px-[15px] overflow-hidden"
   >
     <div class="relative w-full h-full">
       <!-- Background Image -->
@@ -13,12 +13,20 @@
           alt=""
           draggable="false"
         />
-        <div class="absolute inset-0 bg-black/40"></div>
+        <div
+          class="absolute inset-0
+                z-[10]
+                bg-gradient-to-b
+                from-black/10
+                via-black/55
+                to-black/90"
+        ></div>
+
       </div>
 
       <!-- CONTENT -->
       <div
-        class="relative h-full flex flex-col gap-[20px] md:gap-[0px]
+        class="relative z-[15] h-full flex flex-col gap-[20px] md:gap-[0px]
                md:flex-row justify-end items-bottom
                md:justify-between md:items-end
                px-[20px] md:px-[40px] pb-[40px]"
@@ -31,7 +39,7 @@
           <p
             class="text-white 
                    text-[clamp(18px,3vw,20px)]
-                   leading-relaxed"
+                   leading-[1.6]"
           >
             {{ description }}
           </p>

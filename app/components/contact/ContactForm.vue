@@ -31,28 +31,53 @@
             type="text"
             placeholder="Name"
             v-model="form.name"
-            class="form-input text-[clamp(16px,3vw,22px)]"
+            class="w-full px-[14px] py-[12px]
+                  rounded-[8px]
+                  bg-[#f3f3f3]
+                  border border-[#e1e1e1]
+                  outline-none
+                  focus:border-[#111]
+                  "
           />
 
           <input
             type="email"
             placeholder="Email ID"
             v-model="form.email"
-            class="form-input text-[clamp(16px,3vw,22px)]"
+            class="w-full px-[14px] py-[12px]
+                  rounded-[8px]
+                  bg-[#f3f3f3]
+                  border border-[#e1e1e1]
+                  outline-none
+                  focus:border-[#111]
+                  "
           />
 
           <input
             type="tel"
             placeholder="Phone Number"
             v-model="form.phone"
-            class="form-input text-[clamp(16px,3vw,22px)]"
+            class="w-full px-[14px] py-[12px]
+                  rounded-[8px]
+                  bg-[#f3f3f3]
+                  border border-[#e1e1e1]
+                  outline-none
+                  focus:border-[#111]
+                 "
           />
 
           <textarea
             placeholder="Message"
             v-model="form.message"
             rows="4"
-            class="form-input text-[clamp(16px,3vw,22px)]"
+            class="w-full px-[14px] py-[12px]
+                  rounded-[8px]
+                  bg-[#f3f3f3]
+                  border border-[#e1e1e1]
+                  outline-none
+                  focus:border-[#111]
+                  resize-none
+                  "
           ></textarea>
 
           <!-- SUBMIT -->
@@ -65,16 +90,17 @@
             <div class="btn-inner">
               <div class="btn-flex">
                 <div class="btn-text">
-                    {{ loading ? "Sending..." : "Submit" }}
-                  </div>
-                  <div class="btn-text">
-                    {{ loading ? "Sending..." : "Submit" }}
-                  </div>
+                  {{ loading ? "Sending..." : "Submit" }}
+                </div>
+                <div class="btn-text">
+                  {{ loading ? "Sending..." : "Submit" }}
+                </div>
               </div>
             </div>
           </button>
-
         </form>
+
+
         <p
           v-if="status === 'success'"
           class="text-green-600 text-center md:text-left"

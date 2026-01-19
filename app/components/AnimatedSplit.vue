@@ -166,8 +166,8 @@ defineExpose({ play, setInitial, reverse })
 .word-clip {
   display: inline-block;
   overflow: hidden;
-  height: 0.98em;
-  line-height: 0.9;
+  height: 1.15em;
+  line-height: 0.97;
 }
 
 .word {

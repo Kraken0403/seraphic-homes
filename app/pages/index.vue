@@ -2,7 +2,9 @@
   <div>
     <HomeHero ref="heroRef" />
     <HomeAbout />
+    <!-- <HomeAboutTwo /> -->
     <HomeProductSection />
+    <!-- <WhySeraphicTwo /> -->
     <WhySeraphic />
     <UpcomingProjects />
   </div>
@@ -15,8 +17,10 @@ import { useIntroTimeline } from "@/composables/useIntroTimeline"
 
 import HomeHero from "@/components/home/HomeHero.vue"
 import HomeAbout from "@/components/home/HomeAbout.vue"
+import HomeAboutTwo from "@/components/home/HomeAboutTwo.vue"
 import HomeProductSection from "@/components/home/HomeProductSection.vue"
 import WhySeraphic from "@/components/home/WhySeraphic.vue"
+import WhySeraphicTwo from "@/components/home/WhySeraphicTwo.vue"
 import UpcomingProjects from "@/components/home/UpcomingProjects.vue"
 
 useSeoMeta({

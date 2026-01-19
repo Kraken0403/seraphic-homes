@@ -8,15 +8,15 @@
 
       <AnimatedSplit
         ref="titleFooter"
-        text="Visit Us"
+        text="Refined living begins here"
         tag="h2"
-        wrap-class="font-[300] text-[clamp(42px,8.5vw,95px)] leading-[0.9] text-[#1a1a1a]"
+        wrap-class="font-[300] text-[clamp(46px,5.1vw,72px)] leading-[0.9] text-[#1a1a1a]"
       />
 
       <p
-        class="w-full text-center md:w-[50%] text-[clamp(16px,3vw,22px)] font-[500] text-[#1a1a1a] -mt-[20px] md:-mt-[40px]"
+        class="w-full text-center md:w-[50%] text-[clamp(18px,3vw,22px)] font-[500] text-[#1a1a1a] -mt-[20px] md:-mt-[40px]"
       >
-          Book a demo or visit Seraphic Homes to experience the craftsmanship behind Hästens beds and Küche 7 stainless steel kitchens, wardrobes and vanitie
+      Book a demo or visit Seraphic Homes to experience the craftsmanship behind Hästens beds and Küche 7 stainless steel kitchens, wardrobes and vanities.
       </p>
 
       <Button
@@ -134,7 +134,7 @@
           <span class="link-inner">
             <span class="link-flex">
               <span class="link-text">+91-9898087532</span>
-              <span class="link-text">+91-98998087532</span>
+              <span class="link-text">+91-9898087532</span>
             </span>
           </span>
         </a>

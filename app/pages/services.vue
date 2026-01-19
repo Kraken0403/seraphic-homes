@@ -86,12 +86,42 @@
       />
 
       <form class="max-w-[650px] mx-auto flex flex-col gap-6">
-        <input class="border p-3 bg-gray-100" placeholder="Name" />
-        <input class="border p-3 bg-gray-100" placeholder="Email" />
-        <input class="border p-3 bg-gray-100" placeholder="Phone" />
-        <textarea rows="4" class="border p-3 bg-gray-100" placeholder="Message" />
-        <Button label="Submit" />
+        <input
+          class="px-[14px] py-[12px] rounded-[8px]
+                bg-[#f3f3f3] border border-[#e1e1e1]
+                text-[14px] outline-none
+                focus:border-[#111] transition"
+          placeholder="Name"
+        />
+
+        <input
+          class="px-[14px] py-[12px] rounded-[8px]
+                bg-[#f3f3f3] border border-[#e1e1e1]
+                text-[14px] outline-none
+                focus:border-[#111] transition"
+          placeholder="Email"
+        />
+
+        <input
+          class="px-[14px] py-[12px] rounded-[8px]
+                bg-[#f3f3f3] border border-[#e1e1e1]
+                text-[14px] outline-none
+                focus:border-[#111] transition"
+          placeholder="Phone"
+        />
+
+        <textarea
+          rows="4"
+          class="px-[14px] py-[12px] rounded-[8px]
+                bg-[#f3f3f3] border border-[#e1e1e1]
+                text-[14px] outline-none resize-none
+                focus:border-[#111] transition"
+          placeholder="Message"
+        ></textarea>
+
+        <Button class="w-auto mx-auto" label="Submit" />
       </form>
+
     </div>
 
   </div>

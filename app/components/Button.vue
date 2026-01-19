@@ -57,6 +57,7 @@ defineProps({
   justify-content: center;
   gap: 0.75rem;
 
+  width: fit-content;
   font-family: "Instrument Sans", sans-serif;
   font-size: 14px;
   letter-spacing: 0.05em;

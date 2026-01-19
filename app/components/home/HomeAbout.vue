@@ -4,6 +4,8 @@
     class="relative z-[20] bg-[#fff] w-full min-h-[100vh] py-[130px]
            flex items-center justify-center overflow-hidden px-[20px]"
   >
+
+  <p class="text-[#111] text-[16px] absolute top-[5px] right-[10px] font-bold uppercase">(About Us)</p>
     <!-- LEFT IMAGE WRAPPER -->
     <div
       ref="leftWrap"

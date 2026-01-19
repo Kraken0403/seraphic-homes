@@ -7,7 +7,7 @@ export const stores = [
     title: "Seraphic Homes",
     city: "Ahmedabad",
     description:
-      "Experience curated luxury living at Seraphic Homes Ahmedabad. Discover Hästens handcrafted beds and Küche 7 premium kitchens in an immersive showroom environment.",
+      "Our Ahmedabad studio is designed as an immersive luxury experience. Explore Hästens handcrafted beds and Küche 7 stainless steel kitchens, wardrobes and vanities in an elegant setting curated for discerning homeowners. Our consultants guide you through personalised solutions that blend form, comfort, and functionality.",
     phone: "+91-9898087501",
     email: "contact@seraphichomes.in",
     mapLink:
@@ -27,7 +27,7 @@ export const stores = [
     title: "Patel Interiors Pvt. Ltd.",
     city: "Rajkot",
     description:
-      "Visit Seraphic Homes Rajkot to explore refined interior solutions featuring Küche 7 modular kitchens and premium European finishes.",
+      "The Rajkot experience centre brings refined global craftsmanship to Gujarat. Discover the artistry of Hästens beds and the innovation of Küche 7 stainless steel kitchens, wardrobes and vanities with Miele and Siemens appliances, all within a calm and thoughtfully designed environment",
     phone: "+91 9999099012",
     email: "rajkot@seraphichomes.in",
     mapLink:
