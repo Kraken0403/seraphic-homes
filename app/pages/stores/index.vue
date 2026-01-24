@@ -25,7 +25,7 @@
           <NuxtLink
             v-for="store in stores"
             :key="store.slug"
-            :to="`/stores/${store.slug}`"
+            :to="`${store.mapLink}`"
             class="group block"
           >
             <!-- CARD -->
@@ -55,8 +55,14 @@
                     </p>
   
                     <p class="text-white/70 text-[clamp(16px,3vw,20px)] leading-[1.4] text-justify">
-                      {{ store.description }}
+                      {{ store.phone }}
                     </p>
+                    <p class="text-white/70 text-[clamp(16px,3vw,20px)] leading-[1.4] text-justify">
+                      {{ store.email }}
+                    </p>
+                    <!-- <p class="text-white/70 text-[clamp(16px,3vw,20px)] leading-[1.4] text-justify">
+                      {{ store.address }}
+                    </p> -->
                   </div>
   
                   <!-- ARROW -->
@@ -104,7 +110,8 @@
       title: "Seraphic Homes Ahmedabad | Hästens Beds & Küche 7 Kitchens, wardrobes and vanities",
       description:
         "Visit Seraphic Homes Ahmedabad to experience Hästens handcrafted Swedish beds and Küche 7 stainless steel modular kitchens, wardrobes and vanities  with Miele and Siemens appliances. Book your consultation today"
-    })
+       
+      })
     // definePageMeta({
     //     layout: "special",
     //     headerLogo: blackLogo

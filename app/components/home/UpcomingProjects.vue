@@ -95,9 +95,15 @@
                         <p class="text-white text-[clamp(16px,3vw,22px)] font-[500] leading-[1]">
                           {{ item.caption }}
                         </p>
+                        <!-- <p class="text-white text-[clamp(16px,3vw,22px)] font-[500] leading-[1]">
+                          {{ item.phone }}
+                        </p> -->
 
                         <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[20px] leading-[1.4]">
-                          {{ item.address }}
+                          {{ item.phone }}
+                        </p>
+                        <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[0px] leading-[1.4]">
+                          {{ item.email }}
                         </p>
                       </div>
 
@@ -146,9 +152,10 @@ import "swiper/css";
 
 import AnimatedSplit from "@/components/AnimatedSplit.vue";
 
-import proj1 from "@/assets/images/abd.jpeg";
-import proj2 from "@/assets/images/rajkot.jpg";
-import proj3 from "@/assets/images/vadodara.png";
+// import proj1 from "@/assets/images/abd.jpeg";
+// import proj2 from "@/assets/images/rajkot.jpg";
+// import proj3 from "@/assets/images/vadodara.png";
+import { stores } from "@/data/stores"
 
 const sectionRef = ref(null);
 const title = ref(null);
@@ -156,32 +163,17 @@ const title = ref(null);
 const swiper = ref(null);
 const activeIndex = ref(0);
 
-const projects = ref([
-  { 
-    title: "Ahmedabad", 
-    image: proj1,
-    caption: 'Seraphic Homes', 
-    address: 'Ground & Mezzanine floor, Eyecon House, Sindhu Bhavan Marg, opp. Allen Career Institute, PRL Colony, Bodakdev, Ahmedabad, Gujarat 380059',
-    map: 'https://maps.app.goo.gl/uHYFESMKGcY2csiC8'
-  },
-  { 
-    title: "Rajkot", 
-    image: proj2,
-    caption: 'Patel Interiors PVT. LTD.', 
-    address: 'Opp. Masoom School, Opp, Selenium Sky Apartment off Kalawad Road,Mota Mauva,Rajkot-360005',
-    map: "https://maps.app.goo.gl/n3podk3YHd3s1hvK6"
-  },
-  { 
-    title: "Vadodara", 
-    image: proj3,
-    caption: 'Seraphic Homes', 
-    address: '2nd floor, Divya Siddhi, above The Shoppe, Natubhai Circle, Vadiwadi, Vadodara, Gujarat 390007',
-    map: "https://maps.app.goo.gl/yaNyqWk4BB6SmYbZ8"
-  }
-  // { title: "Surat", image: proj1 },
-  // { title: "Vadodara", image: proj2 },
-  // { title: "Mumbai", image: proj1 }
-]);
+const projects = computed(() =>
+  stores.map(store => ({
+    title: store.city,                // Ahmedabad, Rajkot, etc.
+    caption: store.title,             // Seraphic Homes / Zeqon
+    address: store.description || "", // short text under caption
+    image: store.mainImage,            // hero image
+    map: store.mapLink,                // Google Maps link
+    phone: store.phone,
+    email: store.email
+  }))
+)
 
 function onSwiper(instance) {
   swiper.value = instance;
