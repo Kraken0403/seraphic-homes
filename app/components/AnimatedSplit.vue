@@ -188,12 +188,22 @@ defineExpose({ play, setInitial, reverse })
 }
 
 /* Screen-reader only text */
-.sr-only {
+/* .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+} */
+
+.sr-only {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  text-align: justify;
+  line-height: inherit;
+  font-size: inherit;
 }
+
 </style>

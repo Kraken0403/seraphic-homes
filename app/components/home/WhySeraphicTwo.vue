@@ -31,7 +31,7 @@
       </div>
   
       <!-- DESKTOP FULLSCREEN -->
-      <div class="hidden md:block relative w-screen h-[120vh] overflow-hidden">
+      <div class="hidden md:block relative w-screen h-[90vh] overflow-hidden">
   
         <!-- BACKGROUND IMAGES -->
         <div
@@ -43,7 +43,7 @@
           <img
             :ref="el => imageRefs[i] = el"
             :src="item.image"
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-center"
           />
         </div>
   

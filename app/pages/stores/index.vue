@@ -11,7 +11,7 @@
         />
   
         <!-- CAPTION -->
-        <p class="mt-6 mb-6 max-w-[720px] mx-auto text-[clamp(18px,3vw,20px)] opacity-70 leading-[1.4]">
+        <p class="mt-6 mb-6 max-w-[720px] mx-auto text-[clamp(18px,3vw,20px)]  opacity-70 leading-[1.4]">
           Discover Seraphic Homes experience centers across India, where curated
           luxury meets craftsmanship. Visit our stores to explore bespoke interiors,
           handcrafted beds, and premium modular kitchens.
@@ -54,7 +54,7 @@
                       {{ store.city }}
                     </p>
   
-                    <p class="text-white/70 text-[clamp(16px,3vw,22px)] leading-[1.4]">
+                    <p class="text-white/70 text-[clamp(16px,3vw,20px)] leading-[1.4] text-justify">
                       {{ store.description }}
                     </p>
                   </div>

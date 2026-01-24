@@ -4,8 +4,8 @@
     <HomeAbout />
     <!-- <HomeAboutTwo /> -->
     <HomeProductSection />
-    <!-- <WhySeraphicTwo /> -->
-    <WhySeraphic />
+    <WhySeraphicTwo />
+    <!-- <WhySeraphic /> -->
     <UpcomingProjects />
   </div>
 </template>

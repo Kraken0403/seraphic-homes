@@ -1,5 +1,6 @@
 import ahmedabadMain from "@/assets/images/hero.jpg"
-import rajkotMain from "@/assets/images/hero.jpg"
+import rajkotMain from "@/assets/images/rajkot.jpg"
+import vadodara from "@/assets/images/vadodara.png"
 
 export const stores = [
   {
@@ -16,10 +17,7 @@ export const stores = [
 
     gallery: [
       "/stores/img-001.webp",
-      "/stores/img-004.webp",
-      "/stores/img-009.webp",
-      "/stores/img-010.webp",
-      "/stores/img-014.webp",
+      "/stores/img-004.webp"
     ]
   },
   {
@@ -36,10 +34,26 @@ export const stores = [
 
     gallery: [
       "/stores/img-001.webp",
-      "/stores/img-004.webp",
-      "/stores/img-009.webp",
-      "/stores/img-010.webp",
-      "/stores/img-014.webp",
+      "/stores/img-004.webp"
+    ]
+  },
+
+  {
+    slug: "vadodara",
+    title: "Seraphic Homes",
+    city: "Vadodara",
+    description:
+      "",
+    phone: "+91 9898518589",
+    email: "vadodara@seraphichomes.in",
+    mapLink:
+      "https://maps.app.goo.gl/yaNyqWk4BB6SmYbZ8",
+    mainImage: vadodara,
+
+    gallery: [
+      "/stores/vd-2.png",
+      "/stores/vd-4.jpg",
+      "/stores/vadodara.png",
     ]
   }
 ]

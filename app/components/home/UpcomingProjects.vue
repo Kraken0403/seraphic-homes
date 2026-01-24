@@ -71,7 +71,7 @@
                   {{ item.title }}
                 </p>
                 <div
-                  class="relative w-full h-[90vh] overflow-hidden card"
+                  class="relative w-full h-[85vh] overflow-hidden card"
                   :style="{
                     backgroundImage: `url(${item.image})`,
                     backgroundSize: 'cover',
@@ -148,6 +148,7 @@ import AnimatedSplit from "@/components/AnimatedSplit.vue";
 
 import proj1 from "@/assets/images/abd.jpeg";
 import proj2 from "@/assets/images/rajkot.jpg";
+import proj3 from "@/assets/images/vadodara.png";
 
 const sectionRef = ref(null);
 const title = ref(null);
@@ -170,6 +171,13 @@ const projects = ref([
     address: 'Opp. Masoom School, Opp, Selenium Sky Apartment off Kalawad Road,Mota Mauva,Rajkot-360005',
     map: "https://maps.app.goo.gl/n3podk3YHd3s1hvK6"
   },
+  { 
+    title: "Vadodara", 
+    image: proj3,
+    caption: 'Seraphic Homes', 
+    address: '2nd floor, Divya Siddhi, above The Shoppe, Natubhai Circle, Vadiwadi, Vadodara, Gujarat 390007',
+    map: "https://maps.app.goo.gl/yaNyqWk4BB6SmYbZ8"
+  }
   // { title: "Surat", image: proj1 },
   // { title: "Vadodara", image: proj2 },
   // { title: "Mumbai", image: proj1 }

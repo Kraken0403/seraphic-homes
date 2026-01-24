@@ -67,16 +67,29 @@ definePageMeta({
   headerTheme: "light"
 })
 
+const imageModules = import.meta.glob(
+  "@/assets/images/gallery/*.webp",
+  { eager: true, import: "default" }
+)
+
+const allImages = Object.values(imageModules)
+  .sort() // keeps img-001 → img-010 order
+  .map((src, i) => ({
+    id: i,
+    src
+  }))
+
+
 /* -----------------------
    GALLERY DATA
 ----------------------- */
 
 // create list dynamically (example: 60 images)
-const allImages = Array.from({ length: 23 }).map((_, i) => ({
-  id: i,
-  src: `/gallery/img-${String(i + 1).padStart(3, "0")}.webp`
+// const allImages = Array.from({ length: 23 }).map((_, i) => ({
+//   id: i,
+//   src: `/gallery/img-${String(i + 1).padStart(3, "0")}.webp`
 
-}))
+// }))
 
 const BATCH_SIZE = 12
 const visibleImages = ref([])

@@ -1,7 +1,7 @@
 <template>
   <section
     ref="sectionEl"
-    class="relative w-full h-[90vh] md:h-[100vh] px-[15px] overflow-hidden"
+    class="relative w-full h-[90vh] md:h-[80vh] px-[15px] overflow-hidden"
   >
     <div class="relative w-full h-full">
       <!-- Background Image -->
@@ -39,7 +39,10 @@
           <p
             class="text-white 
                    text-[clamp(18px,3vw,20px)]
-                   leading-[1.6]"
+                   leading-[1.6]
+                   justify
+                   text-justify
+                   "
           >
             {{ description }}
           </p>

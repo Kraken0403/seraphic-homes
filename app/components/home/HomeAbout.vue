@@ -5,9 +5,9 @@
            flex items-center justify-center overflow-hidden px-[20px]"
   >
 
-  <p class="text-[#111] text-[16px] absolute top-[5px] right-[10px] font-bold uppercase">(About Us)</p>
+  <!-- <p class="text-[#111] text-[16px] absolute top-[5px] right-[10px] font-bold uppercase">(About Us)</p> -->
     <!-- LEFT IMAGE WRAPPER -->
-    <div
+    <!-- <div
       ref="leftWrap"
       class="absolute hidden md:block
              left-[5%] top-[60%] -translate-y-1/2
@@ -19,10 +19,10 @@
         class="w-full h-full object-cover"
         draggable="false"
       />
-    </div>
+    </div> -->
 
     <!-- RIGHT IMAGE WRAPPER -->
-    <div
+    <!-- <div
       ref="rightWrap"
       class="absolute hidden md:block
              right-[4%] top-[45%] -translate-y-1/2
@@ -34,38 +34,40 @@
         class="w-full h-full object-cover"
         draggable="false"
       />
-    </div>
+    </div> -->
 
     <!-- CENTER TEXT -->
-    <div class="relative w-[100%] md:w-[60vw] text-center z-20">
-      <AnimatedSplit
-        ref="paragraph"
-        tag="p"
-        text="At Seraphic Homes, we curate exceptional living environments rooted in craftsmanship, comfort, and enduring design. With a legacy of over two decades in luxury interiors, we bring together the finest global and Indian brands to create spaces that are as functional as they are beautiful. "
-        wrap-class="text-[clamp(22px,2vw,42px)] font-[500] leading-[1.4] text-[#1a1a1a]"
-        :char-stagger="0"
-        :word-styles="{
-          'Seraphic Homes': 'text-[#E96B2C] font-[900]',
-  
-        }"
-      />
+    <div class="relative flex gap-[30px] w-[100%] z-20 h-[85vh] overflow-hidden justify-between">
+        <div class="w-[48%] max-w-[590px] flex flex-col gap-[20px] relative">
 
-      <AnimatedSplit
-        ref="paragraphTwo"
-        tag="p"
-        text="As proud representatives of Hästens, the world’s most iconic handcrafted bed brand from Sweden, and Küche 7, India’s leading manufacturer of 100% stainless steel modular kitchens, Wardrobes and Vanities , we offer discerning homeowners an elevated approach to modern living  where every detail is intentional and every experience is seamless."
-        wrap-class="text-[clamp(22px,2vw,42px)] font-[500] leading-[1.4] text-[#1a1a1a]"
-        :char-stagger="0"
-        :word-styles="{
-          'Seraphic Homes': 'text-[#E96B2C] font-[900]',
-          'Hästens': 'font-[900]',
-          'Küche 7': 'font-[900]'
-        }"
-      />
+          <p
+            class="text-[#111] uppercase text-[16px] flex items-center gap-[5px]
+                   font-[900] mb-[10px]"
+          >
+            <span class="w-[9px] h-[9px] block bg-[#111] rounded-full"></span>
+            ABOUT US
+         </p>
 
-      <div class="mt-10 flex justify-center">
-        <Button label="Get in Touch" href="/contact" />
+          <p class="text-[clamp(18px,3vw,20px)] text-justify font-[400] leading-[1.4] text-[#1a1a1a]">
+            <span class="text-[#E96B2C] font-bold ">At Seraphic Homes,</span> we curate exceptional living environments rooted in craftsmanship, comfort, and enduring design. With a legacy of over two decades in luxury interiors, we bring together the finest global and Indian brands to create spaces that are as functional as they are beautiful. 
+          </p>
+
+          <p class="text-[clamp(18px,3vw,20px)] text-justify font-[400] leading-[1.4] text-[#1a1a1a]">
+            As proud representatives of <span class="italic font-bold">Hästens</span>, the world’s most iconic handcrafted bed brand from Sweden, and <span class="italic font-bold">Küche 7</span>, India’s leading manufacturer of 100% stainless steel modular kitchens, Wardrobes and Vanities , we offer discerning homeowners an elevated approach to modern living  where every detail is intentional and every experience is seamless.
+          </p>
+
+        <div class="mt-auto flex justify-start">
+          <Button label="Get in Touch" href="/contact" />
+        </div>
       </div>
+
+      <div class="w-[52%] h-full overflow-hidden">
+
+        <img class="w-full h-full object-cover" :src="rightImage" alt="">
+      </div>
+
+
+
     </div>
   </section>
 </template>
@@ -79,9 +81,7 @@ import { useNuxtApp } from "#app"
 
 import AnimatedSplit from "@/components/AnimatedSplit.vue"
 import Button from "@/components/Button.vue"
-
-import leftImage from "@/assets/images/left.png"
-import rightImage from "@/assets/images/right.jpg"
+import rightImage from "@/assets/images/ab-3.png"
 
 // gsap.registerPlugin(ScrollTrigger)
 
@@ -101,11 +101,11 @@ onMounted(() => {
   /* -----------------------------
      INITIAL STATES (REVEAL)
   ----------------------------- */
-  $gsap.set([leftImg.value, rightImg.value], {
-    scale: 1.15,
-    filter: "blur(12px)",
-    y: 30
-  })
+  // $gsap.set([leftImg.value, rightImg.value], {
+  //   scale: 1.15,
+  //   filter: "blur(12px)",
+  //   y: 30
+  // })
 
   /* -----------------------------
      INTRO REVEAL (ONCE)
@@ -119,47 +119,36 @@ onMounted(() => {
   })
 
   introTl
-    .to([leftImg.value, rightImg.value], {
-      scale: 1,
-      filter: "blur(0px)",
-      y: 0,
-      duration: 1.2,
-      ease: "power3.out",
-      stagger: 0.15
-    })
-    .add(() => {
-      paragraph.value?.play?.()
-    }, "-=0.6").add(() => {
-      paragraphTwo.value?.play?.()
-    }, "-=0.6")
+  .call(() => paragraph.value?.play?.(), null, 0)
+  .call(() => paragraphTwo.value?.play?.(), null, 0.25)
 
   /* -----------------------------
      PARALLAX (ORIGINAL BEHAVIOR)
   ----------------------------- */
 
   // LEFT IMAGE — FAST, OPPOSITE
-  $gsap.to(leftWrap.value, {
-    y: "-300%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionEl.value,
-      scrub: true,
-      start: "top bottom",
-      end: "bottom top"
-    }
-  })
+  // $gsap.to(leftWrap.value, {
+  //   y: "-300%",
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: sectionEl.value,
+  //     scrub: true,
+  //     start: "top bottom",
+  //     end: "bottom top"
+  //   }
+  // })
 
   // RIGHT IMAGE — SUBTLE
-  $gsap.to(rightWrap.value, {
-    y: "20%",
-    ease: "none",
-    scrollTrigger: {
-      trigger: sectionEl.value,
-      scrub: true,
-      start: "top bottom",
-      end: "bottom top"
-    }
-  })
+  // $gsap.to(rightWrap.value, {
+  //   y: "20%",
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: sectionEl.value,
+  //     scrub: true,
+  //     start: "top bottom",
+  //     end: "bottom top"
+  //   }
+  // })
 })
 </script>
 

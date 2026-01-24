@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   const lenis: InstanceType<typeof Lenis> =
     w.__lenis || new Lenis({
-      duration: 1.1,
+      duration: 1.0,
       smoothWheel: true,
       smoothTouch: false,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
