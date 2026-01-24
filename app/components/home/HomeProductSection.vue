@@ -2,7 +2,7 @@
   <div class="w-[100%] bg-[#fff] flex flex-col gap-[15px] pb-[80px] md:pb-[160px]">
     <!-- Hästens -->
     <HomeProductBlock
-      title="HÄSTENS"
+      title="Hästens"
       description="Handcrafted in Sweden since 1852, Hästens beds are handcrafted using the finest natural materials like horse tail hair, wool and cotton and hand-crafter and completely time-honoured techniques. Every bed is a testament to precision, heritage, and the pursuit of exceptional sleep, designed for those who believe true luxury begins with rest. "
       :image="hastens"
       buttonOneLabel="BOOK A SLEEP SPA"

@@ -1,7 +1,7 @@
 <template>
   <section
     ref="sectionEl"
-    class="relative w-full h-[90vh] md:h-[80vh] px-[15px] overflow-hidden"
+    class="relative w-full h-[90vh] md:h-[95vh] px-[15px] overflow-hidden"
   >
     <div class="relative w-full h-full">
       <!-- Background Image -->
