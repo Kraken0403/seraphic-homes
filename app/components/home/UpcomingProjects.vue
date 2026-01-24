@@ -95,20 +95,26 @@
                         <p class="text-white text-[clamp(16px,3vw,22px)] font-[500] leading-[1]">
                           {{ item.caption }}
                         </p>
+                        <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[0px] leading-[1.4]">
+                          {{ item.city }}
+                        </p>
+                        <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[0px] leading-[1.4]">
+                          {{ item.phone }}
+                        </p>
                         <!-- <p class="text-white text-[clamp(16px,3vw,22px)] font-[500] leading-[1]">
                           {{ item.phone }}
                         </p> -->
-
                         <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[20px] leading-[1.4]">
-                          {{ item.phone }}
+                          {{ item.address }}
                         </p>
-                        <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[0px] leading-[1.4]">
+
+                        <!-- <p class="text-white/70 text-[clamp(16px,2.4vw,18px)] mt-[0px] leading-[1.4]">
                           {{ item.email }}
-                        </p>
+                        </p> -->
                       </div>
 
                       <!-- ARROW BUTTON -->
-                      <div class="w-[20%]">
+                      <div class="w-[20%] flex justify-end">
                         <div
                             class="w-[52px] h-[52px] rounded-full bg-[#1a1a1a] flex items-center justify-center transition-transform duration-500"
                           >
@@ -167,11 +173,12 @@ const projects = computed(() =>
   stores.map(store => ({
     title: store.city,                // Ahmedabad, Rajkot, etc.
     caption: store.title,             // Seraphic Homes / Zeqon
-    address: store.description || "", // short text under caption
+    address: store.address || "", // short text under caption
     image: store.mainImage,            // hero image
     map: store.mapLink,                // Google Maps link
     phone: store.phone,
-    email: store.email
+    email: store.email,
+    city: store.city
   }))
 )
 

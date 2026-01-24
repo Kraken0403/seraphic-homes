@@ -124,7 +124,7 @@ export const stores = [
     city: "Raipur",
     description:
       "Zeqon Raipur offers contemporary kitchen systems and elegant interior design solutions for modern homes.",
-    phone: "91 9898087501",
+    phone: "+91 9898087501",
     email: "contact@seraphichomes.in",
     timings: "Mon - Sat · 10:00 AM - 7:00 PM",
     mapLink: "https://maps.app.goo.gl/z7hQEtfqLU6H2LUTA",

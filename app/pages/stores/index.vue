@@ -58,7 +58,7 @@
                       {{ store.phone }}
                     </p>
                     <p class="text-white/70 text-[clamp(16px,3vw,20px)] leading-[1.4] text-justify">
-                      {{ store.email }}
+                      {{ store.address }}
                     </p>
                     <!-- <p class="text-white/70 text-[clamp(16px,3vw,20px)] leading-[1.4] text-justify">
                       {{ store.address }}
