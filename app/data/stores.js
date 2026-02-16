@@ -6,7 +6,7 @@ import puneMain from "@/assets/images/pune.jpg"
 import raipurMain from "@/assets/images/chhattisgarh.jpg"
 import kolkataMain from "@/assets/images/kolkota.jpg"
 import jaipurMain from "@/assets/images/jaipur.jpg"
-import chandigarhMain from "@/assets/images/chandigarh.jpg"
+// import chandigarhMain from "@/assets/images/chandigarh.jpg"
 import delhiMain from "@/assets/images/delhi.jpeg"
 
 export const stores = [
@@ -55,11 +55,11 @@ export const stores = [
 
   {
     slug: "delhi",
-    title: "Zeqon",
+    title: "Küche 7",
     city: "Delhi",
     address: "GF- 02, Mehrauli-Gurgaon Rd, opposite to Metro pillar no.47, New Manglapuri, Sultanpur, New Delhi, Delhi 110030", // JustDial Zeqon Buildtech listing :contentReference[oaicite:2]{index=2}
     description:
-      "Zeqon’s Delhi centre offers interior and design consultations in Rohini, showcasing curated luxurious home solutions.",
+      "Küche 7's Delhi centre offers interior and design consultations in Rohini, showcasing curated luxurious home solutions.",
     phone: "+91 9999099012",
     email: "rajkot@seraphichomes.in",
     mapLink: "https://maps.app.goo.gl/cRyc61SpYkaKS1dXA",
@@ -84,7 +84,7 @@ export const stores = [
 
   {
     slug: "pune",
-    title: "Zeqon",
+    title: "Zeqon Luxury in Land",
     city: "Pune",
     address: "Showroom No. 02, Ground Floor, Prime Business Bay, Opp. Croma, Baner Road, Pune, Maharashtra 411045, India", // from Zeqon site :contentReference[oaicite:4]{index=4}
     description:
@@ -99,7 +99,7 @@ export const stores = [
 
   {
     slug: "raipur",
-    title: "Zeqon",
+    title: "Zeqon Luxury in Land",
     city: "Raipur",
     address: "Zeqon Luxury Land, opposite to Progressive Point, Lalpur, Raipur, Tikrapara, Chhattisgarh 492015", // generic — map location shows Zeqon flagship there per brand site :contentReference[oaicite:5]{index=5}
     description:
@@ -114,7 +114,7 @@ export const stores = [
 
   {
     slug: "kolkata",
-    title: "Zeqon",
+    title: "Zeqon Luxury in Land",
     city: "Kolkata",
     address: "113/G, 113/G, Matheswartala Road, Topsia, Kolkata, West Bengal 700046", // Kuche7 Kolkata showroom (Zeqon partner) :contentReference[oaicite:6]{index=6}
     description:
@@ -129,7 +129,7 @@ export const stores = [
 
   {
     slug: "jaipur",
-    title: "Zeqon",
+    title: "Zeqon Luxury in Land",
     city: "Jaipur",
     address: "Apparel Park, F-110, Mahal Rd, near Bombay hospital, Jaipur, Shri Kishanpura, Rajasthan 302022", // approximate (no structured listing found)
     description:
@@ -142,18 +142,18 @@ export const stores = [
     gallery: ["/stores/img-001.webp","/stores/img-004.webp","/stores/img-009.webp","/stores/img-010.webp","/stores/img-014.webp"]
   },
 
-  {
-    slug: "chandigarh",
-    title: "Zeqon",
-    city: "Chandigarh",
-    address: "Building No., 1243, 1st Floor, JLPL, Industrial Estate, Sector 82, JLPL Industrial Area, Mohali, Punjab 140306", // approximate (no structured listing found)
-    description:
-      "Kuche 7 Chandigarh brings German-grade stainless steel modular kitchens with personalized design services.",
-    phone: "+91 9817776776",
-    email: "info@kuche7.com",
-    timings: "Mon - Sat · 10:00 AM - 7:00 PM",
-    mapLink: "https://maps.app.goo.gl/d1vckmoR8y1MnkKe7",
-    mainImage: chandigarhMain,
-    gallery: ["/stores/img-001.webp","/stores/img-004.webp","/stores/img-009.webp","/stores/img-010.webp","/stores/img-014.webp"]
-  }
+  // {
+  //   slug: "chandigarh",
+  //   title: "Zeqon",
+  //   city: "Chandigarh",
+  //   address: "Building No., 1243, 1st Floor, JLPL, Industrial Estate, Sector 82, JLPL Industrial Area, Mohali, Punjab 140306", // approximate (no structured listing found)
+  //   description:
+  //     "Kuche 7 Chandigarh brings German-grade stainless steel modular kitchens with personalized design services.",
+  //   phone: "+91 9817776776",
+  //   email: "info@kuche7.com",
+  //   timings: "Mon - Sat · 10:00 AM - 7:00 PM",
+  //   mapLink: "https://maps.app.goo.gl/d1vckmoR8y1MnkKe7",
+  //   mainImage: chandigarhMain,
+  //   gallery: ["/stores/img-001.webp","/stores/img-004.webp","/stores/img-009.webp","/stores/img-010.webp","/stores/img-014.webp"]
+  // }
 ];
